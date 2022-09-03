@@ -1,0 +1,412 @@
+@import 'normalize.css';
+html {
+  height: 100%;
+  font-size: 100%;
+}
+
+body {
+  font-size: 16px;
+  margin: 0;
+  height: 100%;
+  min-height: 100%;
+  color: #000;
+  line-height: 1.6;
+  font-family: "Mulish", sans-serif;
+  font-weight: 300;
+  position: relative;
+  background-color: #F5F5F5;
+}
+
+/*========== layout ==========*/
+.body-inner {
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  min-height: 100%;
+  background-repeat: no-repeat;
+  background-image: radial-gradient(50% 50% at 50% 50%, rgba(0, 210, 254, 0.3) 0%, rgba(0, 210, 254, 0) 100%), radial-gradient(50% 50% at 50% 50%, rgba(93, 106, 232, 0.3) 0%, rgba(93, 106, 232, 0) 100%), radial-gradient(50% 50% at 50% 50%, rgba(0, 210, 254, 0.3) 0%, rgba(0, 210, 254, 0) 100%), radial-gradient(50% 50% at 50% 50%, rgba(93, 106, 232, 0.3) 0%, rgba(93, 106, 232, 0) 100%), radial-gradient(50% 50% at 50% 50%, rgba(0, 210, 254, 0.3) 0%, rgba(0, 210, 254, 0) 100%);
+  background-size: 83vw 83vw, 83vw 83vw, 83vw 83vw, 111vw 111vw, 111vw 111vw;
+  background-position: 27% 0, 4% 29vmax, 44% 79vmax, 32% 112vmax, 5% 170vmax;
+}
+@media (min-width: 1200px) {
+  .body-inner {
+    background-position: calc((100vw - 1180px) / 2 + 27%) 0, calc(((100vw - 1180px) / 2 + 4%) * -1) 29vmax, calc((100vw - 1180px) / 2 + 44%) 79vmax, calc(((100vw - 1180px) / 2 + 32%) * -1) 112vmax, calc(((100vw - 1180px) / 2 + 5%) * -1) 170vmax;
+  }
+}
+
+.container-fluid {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.container-fluid-main {
+  flex: 1;
+}
+.container-fluid > .container-fluid-inner {
+  width: 100%;
+  max-width: 1180px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.container-fluid.allWidth {
+  padding-right: 0;
+  padding-left: 0;
+}
+.container-fluid.allWidth img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*========== /layout ==========*/
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  margin-top: 0;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3 {
+  letter-spacing: -0.03em;
+}
+
+h1, .h1 {
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+
+h2, .h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+  line-height: 1.25;
+}
+
+h3, .h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  line-height: 1.33;
+}
+
+h4, .h4 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+h5, .h5 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+h6, .h6 {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+p {
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.fw-regular {
+  font-weight: 400;
+}
+.fw-bold, .btn, b, strong {
+  font-weight: 700;
+}
+
+.c-white {
+  color: #fff;
+}
+
+.c-gray {
+  color: #B2B2B2;
+}
+
+.c-purple {
+  color: #FF0090;
+}
+
+.c-red {
+  color: #E60050;
+}
+
+.c-coral {
+  color: #F38478;
+}
+
+.c-violet {
+  color: #5D6AE8;
+}
+
+.c-green {
+  color: #00AAB9;
+}
+
+.c-blue {
+  color: #00D2FE;
+}
+
+.c-blueDark {
+  color: #2100FF;
+}
+
+.btn {
+  font-family: "Mulish";
+  font-size: 20px;
+  line-height: 1.4;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  min-width: 120px;
+  max-width: 100%;
+  margin-bottom: 15px;
+  padding: 9px 20px;
+  text-decoration: none !important;
+  border-radius: 16px;
+  color: #fff !important;
+  position: relative;
+  z-index: 0;
+  box-shadow: 0px 12px 24px rgba(255, 0, 144, 0.25);
+}
+.btn a {
+  text-decoration: none;
+  color: inherit !important;
+}
+.btn-purple {
+  background-color: #FF0090;
+}
+.btn-purple:hover {
+  box-shadow: 0px 16px 28px rgba(255, 0, 144, 0.3);
+}
+.btn-purple:active {
+  box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+.btn-purple.disabled {
+  pointer-events: none;
+  box-shadow: 0px 12px 24px rgba(255, 0, 144, 0.25);
+  opacity: 0.3;
+}
+.btn-w-auto {
+  width: auto;
+  min-width: auto;
+}
+@media (max-width: 767.98px) {
+  .btn {
+    width: 100%;
+  }
+}
+.btn.btn-small {
+  min-height: 48px;
+  box-shadow: 0px 4px 12px rgba(255, 0, 144, 0.1);
+}
+.btn.btn-small:hover {
+  box-shadow: 0px 8px 16px rgba(255, 0, 144, 0.1);
+}
+.btn.btn-small:active {
+  box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+.btn.btn-small.disabled {
+  opacity: 0.3;
+  box-shadow: 0px 4px 12px rgba(255, 0, 144, 0.1);
+}
+.btn.disabled .btn-inner {
+  opacity: 0.5;
+}
+
+/*========== Form ==========*/
+.form-input_inner {
+  position: relative;
+  margin-bottom: 20px;
+  min-height: 46px;
+  border-radius: 16px;
+  background-color: #fff;
+  z-index: 0;
+}
+.form-input_inner [type=text],
+.form-input_inner [type=email],
+.form-input_inner [type=password],
+.form-input_inner [type=tel],
+.form-input_inner textarea {
+  font-family: "Mulish";
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 22px 20px 8px;
+  position: relative;
+  transition: ease all 0.3s;
+  z-index: 1;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  color: #000;
+}
+.form-input_inner [type=text]:not(:placeholder-shown), .form-input_inner [type=text]:focus,
+.form-input_inner [type=email]:not(:placeholder-shown),
+.form-input_inner [type=email]:focus,
+.form-input_inner [type=password]:not(:placeholder-shown),
+.form-input_inner [type=password]:focus,
+.form-input_inner [type=tel]:not(:placeholder-shown),
+.form-input_inner [type=tel]:focus,
+.form-input_inner textarea:not(:placeholder-shown),
+.form-input_inner textarea:focus {
+  border-color: #000;
+  box-shadow: none;
+}
+.form-input_inner [type=text]:not(:placeholder-shown) ~ label, .form-input_inner [type=text]:focus ~ label,
+.form-input_inner [type=email]:not(:placeholder-shown) ~ label,
+.form-input_inner [type=email]:focus ~ label,
+.form-input_inner [type=password]:not(:placeholder-shown) ~ label,
+.form-input_inner [type=password]:focus ~ label,
+.form-input_inner [type=tel]:not(:placeholder-shown) ~ label,
+.form-input_inner [type=tel]:focus ~ label,
+.form-input_inner textarea:not(:placeholder-shown) ~ label,
+.form-input_inner textarea:focus ~ label {
+  color: #000;
+  font-size: 12px;
+  top: 8px;
+}
+.form-input_inner [type=text][disabled],
+.form-input_inner [type=email][disabled],
+.form-input_inner [type=password][disabled],
+.form-input_inner [type=tel][disabled],
+.form-input_inner textarea[disabled] {
+  pointer-events: none;
+}
+.form-input_inner textarea {
+  height: 100px !important;
+  resize: vertical;
+  padding-top: 20px;
+}
+.form-input_inner label {
+  font-family: "Mulish";
+  color: #B2B2B2;
+  font-size: 16px;
+  line-height: 1;
+  left: 21px;
+  position: absolute;
+  top: 19px;
+  margin: 0;
+  transition: ease all 0.2s;
+  z-index: 1;
+  width: 0;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.form-radio, .form-check {
+  margin: 0;
+  padding: 0;
+}
+.form-radio_inner, .form-check_inner {
+  display: inline-flex;
+  position: relative;
+  vertical-align: top;
+  align-items: center;
+  cursor: pointer;
+}
+.form-radio_inner > input[type=radio], .form-radio_inner > input[type=checkbox], .form-check_inner > input[type=radio], .form-check_inner > input[type=checkbox] {
+  cursor: pointer;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 1;
+}
+.form-radio_inner.checked .form-check-box, .form-radio_inner.checked .form-radio-box, .form-radio_inner > input:checked ~ .form-check-box, .form-radio_inner > input:checked ~ .form-radio-box, .form-check_inner.checked .form-check-box, .form-check_inner.checked .form-radio-box, .form-check_inner > input:checked ~ .form-check-box, .form-check_inner > input:checked ~ .form-radio-box {
+  border-color: #FF0090;
+  transition: border-color 0.5s 0s;
+}
+.form-radio_inner.checked .form-check-box::after, .form-radio_inner.checked .form-radio-box::after, .form-radio_inner > input:checked ~ .form-check-box::after, .form-radio_inner > input:checked ~ .form-radio-box::after, .form-check_inner.checked .form-check-box::after, .form-check_inner.checked .form-radio-box::after, .form-check_inner > input:checked ~ .form-check-box::after, .form-check_inner > input:checked ~ .form-radio-box::after {
+  opacity: 1;
+  transition: opacity 0.3s 0s;
+}
+.form-radio_inner input:disabled ~ .form-check-content,
+.form-radio_inner input:disabled ~ .form-radio-content,
+.form-radio_inner input:disabled ~ .targetChecked,
+.form-radio_inner input:disabled ~ .form-radio-box,
+.form-radio_inner input:disabled ~ .form-radio-txt,
+.form-radio_inner input:disabled ~ .form-check-box,
+.form-radio_inner input:disabled ~ .form-check-txt,
+.form-radio_inner input.disabled ~ .form-check-content,
+.form-radio_inner input.disabled ~ .form-radio-content,
+.form-radio_inner input.disabled ~ .targetChecked,
+.form-radio_inner input.disabled ~ .form-radio-box,
+.form-radio_inner input.disabled ~ .form-radio-txt,
+.form-radio_inner input.disabled ~ .form-check-box,
+.form-radio_inner input.disabled ~ .form-check-txt, .form-check_inner input:disabled ~ .form-check-content,
+.form-check_inner input:disabled ~ .form-radio-content,
+.form-check_inner input:disabled ~ .targetChecked,
+.form-check_inner input:disabled ~ .form-radio-box,
+.form-check_inner input:disabled ~ .form-radio-txt,
+.form-check_inner input:disabled ~ .form-check-box,
+.form-check_inner input:disabled ~ .form-check-txt,
+.form-check_inner input.disabled ~ .form-check-content,
+.form-check_inner input.disabled ~ .form-radio-content,
+.form-check_inner input.disabled ~ .targetChecked,
+.form-check_inner input.disabled ~ .form-radio-box,
+.form-check_inner input.disabled ~ .form-radio-txt,
+.form-check_inner input.disabled ~ .form-check-box,
+.form-check_inner input.disabled ~ .form-check-txt {
+  cursor: default;
+  opacity: 0.2;
+}
+.form-radio_inner input:disabled ~ .radio-box,
+.form-radio_inner input.disabled ~ .radio-box,
+.form-radio_inner input:disabled ~ .check-box,
+.form-radio_inner input.disabled ~ .check-box, .form-check_inner input:disabled ~ .radio-box,
+.form-check_inner input.disabled ~ .radio-box,
+.form-check_inner input:disabled ~ .check-box,
+.form-check_inner input.disabled ~ .check-box {
+  opacity: 0.8;
+}
+.form-radio-txt, .form-check-txt {
+  line-height: 1.2;
+}
+.form-check-box, .form-radio-box {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  background-color: #fff;
+  margin-right: 7px;
+  border: 2px solid #000;
+  margin-top: 0;
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  position: relative;
+  transition: border-color 0.5s 0s;
+}
+.form-check-box::after, .form-radio-box::after {
+  content: "";
+  opacity: 0;
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: opacity 0.5s 0s;
+}
+.form-check-box {
+  border-radius: 8px;
+}
+.form-check-box::after {
+  background-image: url(../i/check.svg);
+}
+.form-radio-box {
+  border-radius: 50%;
+}
+.form-radio-box::after {
+  background-image: url(../i/radio.svg);
+}
+
+/*========== /Form ==========*/

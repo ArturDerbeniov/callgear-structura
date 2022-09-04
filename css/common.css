@@ -319,12 +319,17 @@ p {
   z-index: 1;
 }
 .form-radio_inner.checked .form-check-box, .form-radio_inner.checked .form-radio-box, .form-radio_inner > input:checked ~ .form-check-box, .form-radio_inner > input:checked ~ .form-radio-box, .form-check_inner.checked .form-check-box, .form-check_inner.checked .form-radio-box, .form-check_inner > input:checked ~ .form-check-box, .form-check_inner > input:checked ~ .form-radio-box {
+  box-shadow: 0 0 0 1px #FF0090;
   border-color: #FF0090;
-  transition: border-color 0.5s 0s;
+  transition: box-shadow 0.5s, border-color 0.5s 0s;
 }
 .form-radio_inner.checked .form-check-box::after, .form-radio_inner.checked .form-radio-box::after, .form-radio_inner > input:checked ~ .form-check-box::after, .form-radio_inner > input:checked ~ .form-radio-box::after, .form-check_inner.checked .form-check-box::after, .form-check_inner.checked .form-radio-box::after, .form-check_inner > input:checked ~ .form-check-box::after, .form-check_inner > input:checked ~ .form-radio-box::after {
   opacity: 1;
   transition: opacity 0.3s 0s;
+}
+.form-radio_inner.checked:hover .form-check-box::after, .form-radio_inner.checked:hover .form-radio-box::after, .form-radio_inner > input:checked:hover ~ .form-check-box::after, .form-radio_inner > input:checked:hover ~ .form-radio-box::after, .form-check_inner.checked:hover .form-check-box::after, .form-check_inner.checked:hover .form-radio-box::after, .form-check_inner > input:checked:hover ~ .form-check-box::after, .form-check_inner > input:checked:hover ~ .form-radio-box::after {
+  filter: contrast(0.4);
+  opacity: 0.9;
 }
 .form-radio_inner input:disabled ~ .form-check-content,
 .form-radio_inner input:disabled ~ .form-radio-content,
@@ -375,7 +380,7 @@ p {
   align-self: center;
   background-color: #fff;
   margin-right: 7px;
-  border: 2px solid #000;
+  border: 1px solid rgba(0, 0, 0, 0.7);
   margin-top: 0;
   width: 24px;
   height: 24px;

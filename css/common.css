@@ -19,18 +19,25 @@ body {
 
 /*========== layout ==========*/
 .body-inner {
+  height: 7000px;
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
   min-height: 100%;
   background-repeat: no-repeat;
-  background-image: radial-gradient(50% 50% at 50% 50%, rgba(0, 210, 254, 0.3) 0%, rgba(0, 210, 254, 0) 100%), radial-gradient(50% 50% at 50% 50%, rgba(93, 106, 232, 0.3) 0%, rgba(93, 106, 232, 0) 100%), radial-gradient(50% 50% at 50% 50%, rgba(0, 210, 254, 0.3) 0%, rgba(0, 210, 254, 0) 100%), radial-gradient(50% 50% at 50% 50%, rgba(93, 106, 232, 0.3) 0%, rgba(93, 106, 232, 0) 100%), radial-gradient(50% 50% at 50% 50%, rgba(0, 210, 254, 0.3) 0%, rgba(0, 210, 254, 0) 100%);
-  background-size: 83vw 83vw, 83vw 83vw, 83vw 83vw, 111vw 111vw, 111vw 111vw;
-  background-position: 27% 0, 4% 29vmax, 44% 79vmax, 32% 112vmax, 5% 170vmax;
+  background-image: radial-gradient(50% 50% at 50% 50%, rgba(243, 132, 120, 0.3) 0%, rgba(243, 132, 120, 0) 100%), radial-gradient(50% 50% at 50% 50%, rgba(93, 106, 232, 0.3) 0%, rgba(93, 106, 232, 0) 100%), radial-gradient(50% 50% at 50% 50%, rgb(243, 132, 120) 0%, rgb(243, 132, 120) 100%), radial-gradient(50% 50% at 50% 50%, rgb(93, 106, 232) 0%, rgb(93, 106, 232) 100%), radial-gradient(50% 50% at 50% 50%, rgb(243, 132, 120) 0%, rgb(243, 132, 120) 100%), radial-gradient(50% 50% at 50% 50%, rgba(93, 106, 232, 0.3) 0%, rgba(93, 106, 232, 0) 100%);
+  background-size: 1200px 1200px, 1200px 1200px, 800px 800px, 1000px 1000px, 1000px 1000px, 760px 760px;
+  background-position: -225px 0, -600px 180vmin, -25px calc(50% - 800px), -500px calc(50% + 1000px), -125px calc(50% + 2000px), -5px 100%;
+}
+@media (min-width: 768px) {
+  .body-inner {
+    background-size: 83vw 83vw, 83vw 83vw, 55vw 55vw, 69vw 69vw, 69vw 69vw, 53vw 53vw;
+    background-position: 25vw 0, calc(((100vw - 768px) / 2 + 4%) * -1) 29vmax, 45vw calc(50% - 800px), calc(((100vw - 768px) / 2 + 0%) * -1) calc(50% + 200px), 50% calc(50% + 1100px), 108% 100%;
+  }
 }
 @media (min-width: 1200px) {
   .body-inner {
-    background-position: calc((100vw - 1180px) / 2 + 27%) 0, calc(((100vw - 1180px) / 2 + 4%) * -1) 29vmax, calc((100vw - 1180px) / 2 + 44%) 79vmax, calc(((100vw - 1180px) / 2 + 32%) * -1) 112vmax, calc(((100vw - 1180px) / 2 + 5%) * -1) 170vmax;
+    background-position: 25vw 0, calc(((100vw - 1180px) / 2 + 4%) * -1) 29vmax, 45vw calc(50% - 800px), calc(((100vw - 1180px) / 2 + 0%) * -1) calc(50% + 200px), 50% calc(50% + 1100px), 108% 100%;
   }
 }
 

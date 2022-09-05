@@ -16,6 +16,7 @@ body {
   position: relative;
   background-color: #F5F5F5;
 }
+
 /*========== layout ==========*/
 .body-inner {
   height: 7000px;
@@ -24,7 +25,7 @@ body {
   overflow-x: hidden;
   min-height: 100%;
   background-repeat: no-repeat;
-  background-image: radial-gradient(50% 50% at 50% 50%, rgba(243, 132, 120, 0.3) 0%, rgba(243, 132, 120, 0) 100%), radial-gradient(50% 50% at 50% 50%, rgba(93, 106, 232, 0.3) 0%, rgba(93, 106, 232, 0) 100%), radial-gradient(50% 50% at 50% 50%, rgb(243, 132, 120) 0%, rgb(243, 132, 120) 100%), radial-gradient(50% 50% at 50% 50%, rgb(93, 106, 232) 0%, rgb(93, 106, 232) 100%), radial-gradient(50% 50% at 50% 50%, rgb(243, 132, 120) 0%, rgb(243, 132, 120) 100%), radial-gradient(50% 50% at 50% 50%, rgba(93, 106, 232, 0.3) 0%, rgba(93, 106, 232, 0) 100%);
+  background-image: radial-gradient(50% 50% at 50% 50%, rgba(243, 132, 120, 0.3) 0%, rgba(243, 132, 120, 0) 100%), radial-gradient(50% 50% at 50% 50%, rgba(93, 106, 232, 0.3) 0%, rgba(93, 106, 232, 0) 100%), radial-gradient(50% 50% at 50% 50%, rgba(243, 132, 120, 0.3) 0%, rgba(243, 132, 120, 0) 100%), radial-gradient(50% 50% at 50% 50%, rgba(93, 106, 232, 0.3) 0%, rgba(93, 106, 232, 0) 100%), radial-gradient(50% 50% at 50% 50%, rgba(243, 132, 120, 0.3) 0%, rgba(243, 132, 120, 0) 100%), radial-gradient(50% 50% at 50% 50%, rgba(93, 106, 232, 0.3) 0%, rgba(93, 106, 232, 0) 100%);
   background-size: 1200px 1200px, 1200px 1200px, 800px 800px, 1000px 1000px, 1000px 1000px, 760px 760px;
   background-position: -225px 0, -600px 180vmin, -25px calc(50% - 800px), -500px calc(50% + 1000px), -125px calc(50% + 2000px), -5px 100%;
 }

@@ -19,7 +19,6 @@ body {
 
 /*========== layout ==========*/
 .body-inner {
-  height: 7000px;
   display: flex;
   flex-direction: column;
   overflow-x: hidden;

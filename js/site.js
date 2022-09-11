@@ -14,19 +14,22 @@ function eventDocClick(e) {
 }
 
 $(document).ready(function() {
-    var list = $('.callNotification').select2({
-    	placeholder: "Event type",
-    	closeOnSelect: false,
-    	allowClear: true,
-    	width: '100%'
-    })
- //    .on("select2:closing", function(e) {
-	//     e.preventDefault();
-	// }).on("select2:closed", function(e) {
-	//     list.select2("open");
-	// });
-	list.select2("open");
+	if(document.querySelector(".select2-wrap")) {		
+	    var list = $('.callNotification').select2({
+	    	placeholder: "Event type",
+	    	closeOnSelect: false,
+	    	allowClear: true,
+	    	width: '100%'
+	    })
+	 //    .on("select2:closing", function(e) {
+		//     e.preventDefault();
+		// }).on("select2:closed", function(e) {
+		//     list.select2("open");
+		// });
+		list.select2("open");
+	}
 });
+
 
 function initAudioPlayer(numPlayer) {
 	let idPlayer = "jquery_jplayer_" + numPlayer;

@@ -1,0 +1,20 @@
+.all-link {
+    align-items: center;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.all-link:hover {
+    color: #FF0090;
+    text-decoration: underline;
+}
+
+.all-link svg {
+    margin-left: 8px;
+}
+
+.ae .all-link svg {
+    margin-right: 8px;
+    transform: rotate(180deg);
+}

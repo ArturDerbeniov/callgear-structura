@@ -25,21 +25,12 @@ html[lang=ar] details summary:after {
   left: 40px;
   right: initial;
 }
-.ae .voiceGreetExample__titleTrack,
-html[lang=ar] .voiceGreetExample__titleTrack {
-  margin-left: 0;
-  margin-right: 30px;
-}
 
 .rtl-no {
   direction: ltr;
 }
 .rtl-no * {
   direction: ltr;
-}
-
-.pointer-events-no {
-  pointer-events: none;
 }
 
 .section {
@@ -189,19 +180,6 @@ html[lang=ar] .voiceGreetExample__titleTrack {
   line-height: 1.3;
 }
 
-.voiceGreetExample__medias {
-  display: flex;
-  flex-direction: column;
-  gap: 40px 0;
-}
-.voiceGreetExample__titleTrack {
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 1.4;
-  margin-bottom: 20px;
-  margin-left: 20px;
-}
-
 .typesGreet > .row {
   gap: 10px 0;
 }
@@ -217,6 +195,7 @@ html[lang=ar] .voiceGreetExample__titleTrack {
 }
 .typesGreet__item__1 {
   background: linear-gradient(217.65deg, #F38478 21.71%, #5D6AE8 393.05%);
+  order: 1;
 }
 .typesGreet__item__2 {
   background: linear-gradient(216.21deg, #F38478 -83.77%, #5D6AE8 236.06%);
@@ -234,140 +213,11 @@ html[lang=ar] .voiceGreetExample__titleTrack {
 .typesGreet__item__6 {
   background: linear-gradient(207.01deg, #F38478 -352.92%, #5D6AE8 83.07%);
 }
-.typesGreet__col__1 {
-  order: 0;
-}
-.typesGreet__col__2 {
-  order: 2;
-}
-.typesGreet__col__3 {
-  order: 6;
-}
-.typesGreet__col__4 {
-  order: 1;
-}
-.typesGreet__col__5 {
-  order: 3;
-}
-.typesGreet__col__6 {
-  order: 6;
-}
-
-.textBlockGradient__text {
-  line-height: inherit;
-  margin: 0;
-}
-.textBlockGradient__text__small {
-  font-size: 32px;
-}
-@media (min-width: 992px) {
-  .textBlockGradient__text__small {
-    font-size: 40px;
-  }
-}
-.textBlockGradient__violetRed .textBlockGradient__text {
-  background: #E60050;
-  background: linear-gradient(270deg, #E60050 0%, #5D6AE8 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
-}
-.textBlockGradient__violetBlue .textBlockGradient__text {
-  background: #5D6AE8;
-  background: linear-gradient(90deg, #5D6AE8 0%, #00D2FE 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
-}
-.textBlockGradient__coralViolet .textBlockGradient__text {
-  background: #F38478;
-  background: linear-gradient(90deg, #F38478 0%, #5D6AE8 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
-}
-
-.jp-type-single {
-  width: 100%;
-  height: 80px;
-  background: rgba(255, 255, 255, 0.5);
-  box-shadow: 0px 8px 40px rgba(0, 0, 0, 0.1);
-  border-radius: 36px;
-  padding: 20px 28px 20px 20px;
-  box-sizing: border-box;
-}
-.jp-interface {
-  display: flex;
-  align-items: center;
-}
-.jp-pause, .jp-play {
-  box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.15);
-  display: flex;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-size: contain;
-}
-.jp-play {
-  background: url(../i/btn_play.svg) center center no-repeat;
-}
-.jp-pause {
-  background: url(../i/btn_pause.svg) center center no-repeat;
-}
-.jp-time-holder {
-  margin-left: 17px;
-  display: flex;
-  font-size: 16px;
-  line-height: 20px;
-}
-.jp-current-time {
-  color: #000;
-}
-.jp-duration {
-  color: rgba(0, 0, 0, 0.3);
-}
-.jp-progress {
-  margin-left: 20px;
-  height: 4px;
-  width: calc(100% - 170px);
-  border-radius: 2px;
-}
-.jp-seek-bar {
-  height: 100%;
-  background: rgba(230, 0, 130, 0.1);
-}
-.jp-play-bar {
-  height: 100%;
-  background: #E60082;
-}
 
 .QA__list {
   list-style: none;
   margin: 0;
   padding: 0;
-}
-
-.textBlockGradient {
-  background: rgba(255, 255, 255, 0.5);
-  box-shadow: 0px 8px 40px rgba(0, 0, 0, 0.1);
-  border-radius: 36px;
-}
-
-.textBlockGradient {
-  padding: 40px 20px;
-  line-height: 1.2;
-  font-size: 40px;
-  font-weight: 700;
-}
-@media (min-width: 992px) {
-  .textBlockGradient {
-    line-height: 1.14;
-    font-size: 56px;
-    padding: 80px 130px;
-  }
 }
 
 @media (min-width: 992px) {
@@ -454,9 +304,6 @@ html[lang=ar] .voiceGreetExample__titleTrack {
   }
   .typesGreet__item__6 {
     background: linear-gradient(268.03deg, #F38478 -4.52%, #5D6AE8 303.52%);
-  }
-  .typesGreet__col__1, .typesGreet__col__2, .typesGreet__col__3, .typesGreet__col__4, .typesGreet__col__5, .typesGreet__col__6 {
-    order: 0;
   }
   html[lang=ar] .QA__ans::after {
     margin-left: 20px;

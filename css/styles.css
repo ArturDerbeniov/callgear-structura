@@ -129,6 +129,13 @@ html[lang=ar] .all-link svg {
   height: auto;
 }
 
+.imgShadow-wrap {
+  position: relative;
+  display: inline-block;
+  box-shadow: 0px 12px 40px rgba(0, 0, 0, 0.15);
+  border-radius: 16px;
+}
+
 .textIcon__wrap {
   gap: 10px 0;
 }

@@ -5,7 +5,15 @@
 
 .blog-list {
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 20px;
+}
+
+.blog-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .blog-item img {
@@ -17,7 +25,7 @@
 }
 
 .blog-item_text {
-    padding: 0 20px;
+    max-width: 240px;
 }
 
 .show-mobile {
@@ -26,6 +34,10 @@
 
 .hide-mobile {
     display: flex;
+}
+
+@media (max-width: 1200px) {
+
 }
 
 @media (max-width: 767.98px) {
@@ -43,8 +55,8 @@
     }
 
     .blog-item img {
-        width: 100%;
-        height: auto;
+        /*width: 100%;*/
+        /*height: auto;*/
     }
 
     .blog-item_text {

@@ -1,8 +1,17 @@
 @import 'normalize.css';
+@import 'section.css';
+@import 'details.css';
+@import 'features.css';
+@import 'blog.css';
+@import 'all-link.css';
 
 html {
   height: 100%;
   font-size: 100%;
+}
+
+.ae {
+  direction: rtl;
 }
 
 body {
@@ -43,8 +52,8 @@ body {
 
 .container-fluid {
   width: 100%;
-  padding-right: 20px;
-  padding-left: 20px;
+  padding-right: 15px;
+  padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -85,8 +94,8 @@ h3, .h3 {
 }
 
 h1, .h1 {
-  font-size: 32px;
-  margin-bottom: 20px;
+  font-size: 40px;
+  margin-bottom: 40px;
 }
 
 h2, .h2 {
@@ -108,22 +117,16 @@ h4, .h4 {
 
 h5, .h5 {
   font-size: 18px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 h6, .h6 {
   font-size: 16px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
-@media (min-width: 992px) {
-  h1, .h1 {
-    font-size: 32px;
-    margin-bottom: 20px;
-  }
-}
 p {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   line-height: 1.5;
 }
 
@@ -418,13 +421,13 @@ p {
   border-radius: 8px;
 }
 .form-check-box::after {
-  background-image: url(../i/check.svg);
+  background-image: url(../img/check.svg);
 }
 .form-radio-box {
   border-radius: 50%;
 }
 .form-radio-box::after {
-  background-image: url(../i/radio.svg);
+  background-image: url(../img/radio.svg);
 }
 
 /*========== /Form ==========*/

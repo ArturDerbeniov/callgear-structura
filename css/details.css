@@ -52,7 +52,7 @@ details summary:after {
     content: '';
     width: 24px;
     height: 24px;
-    background-image: url("/img/plus.svg");
+    background-image: url("../i/plus.svg");
     position: absolute;
     top: 37px;
     right: 40px;

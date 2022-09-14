@@ -3,12 +3,19 @@ details {
     background: rgba(255, 255, 255, 0.5);
     box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1);
     border-radius: 36px;
-    padding: 40px;
     margin-bottom: 20px;
+}
+
+details:hover {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
 }
 
 details:last-child {
     margin-bottom: 0;
+}
+
+details[open] summary {
+    padding: 40px 40px 20px;
 }
 
 details[open] summary ~ * {
@@ -25,7 +32,7 @@ details[open] summary ~ * {
 }
 
 details[open] .summary-content {
-    margin-top: 20px;
+    padding: 0 40px 40px;
 }
 
 details summary::-webkit-details-marker {
@@ -33,7 +40,7 @@ details summary::-webkit-details-marker {
 }
 
 details summary {
-    width: calc(100% - 30px);
+    padding: 40px;
     cursor: pointer;
     font-size: 16px;
     line-height: 24px;
@@ -42,11 +49,11 @@ details summary {
 }
 
 details summary:after {
-    content: "+";
-    color: #FF0090;
+    content: '';
+    width: 24px;
+    height: 24px;
+    background-image: url("/img/plus.svg");
     position: absolute;
-    font-size: 1.75rem;
-    font-weight: normal;
     top: 37px;
     right: 40px;
     transform-origin: center;
@@ -60,7 +67,6 @@ details summary:after {
 
 details[open] summary:after {
     transform: rotate(45deg);
-    font-size: 2rem;
 }
 
 details summary {

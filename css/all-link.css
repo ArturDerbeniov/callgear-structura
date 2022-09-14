@@ -1,8 +1,10 @@
 .all-link {
+    padding: 8px 0;
     align-items: center;
     text-decoration: none;
     font-size: 16px;
     line-height: 24px;
+    font-weight: normal;
 }
 
 .all-link:hover {

@@ -17,13 +17,6 @@
     width: 560px;
 }
 
-.features-statistics,
-.features-call-notification,
-.features-call-notification .features_text {
-    font-size: 20px;
-    line-height: 28px;
-}
-
 .features_item {
     display: flex;
     flex-direction: column;
@@ -146,7 +139,7 @@
         grid-row: auto;
     }
 
-    .features_item:nth-child(2) {
+    .features_item:nth-child(3) {
         order: 1;
     }
 

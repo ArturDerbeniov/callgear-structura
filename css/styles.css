@@ -63,16 +63,21 @@ html[lang=ar] .all-link svg {
   justify-content: flex-start;
   text-align: left;
   font-size: 16px;
+  border-radius: 24px;
   box-shadow: none;
   min-height: 64px;
   margin-bottom: 0;
   white-space: nowrap;
   min-width: auto;
+  text-shadow: none;
 }
 .tab-btn:not(.active) {
   background-color: transparent;
   box-shadow: none;
   color: #000 !important;
+}
+.tab-btn:not(.active):hover {
+  background: rgba(255, 0, 144, 0.1);
 }
 .tab-btn.active {
   pointer-events: none;
@@ -126,6 +131,11 @@ html[lang=ar] .all-link svg {
 .headerPage__imgCol {
   text-align: center;
 }
+.headerPage h1 + p, .headerPage__title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.4;
+}
 
 .imgAllWidth {
   width: 100vw;
@@ -158,6 +168,9 @@ html[lang=ar] .all-link svg {
 .textIcon__text {
   margin-top: 17px;
   margin-bottom: 0;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.4;
 }
 
 .QA__list {

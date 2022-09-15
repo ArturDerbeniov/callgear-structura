@@ -291,6 +291,7 @@ html[lang=ar] .all-link svg {
 .textBlockGradient__text {
   line-height: inherit;
   margin: 0;
+  letter-spacing: -0.03em;
 }
 .textBlockGradient__text__small {
   font-size: 32px;
@@ -411,7 +412,48 @@ html[lang=ar] .all-link svg {
   border-radius: 36px;
 }
 
-.QA__list {
+.listGradientVertical {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.listGradientVertical__section .listGradientVertical {
+  margin-top: 20px;
+}
+.listGradientVertical__item {
+  border-radius: 36px;
+  padding: 32px 20px;
+}
+.listGradientVertical__title {
+  color: #fff;
+}
+.listGradientVertical__text {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
+}
+.listGradientVertical__text p {
+  margin: 0;
+}
+.listGradientVertical__text p + p {
+  margin-top: 15px;
+}
+.listGradientVertical__benefitCallLogs .listGradientVertical__item:nth-child(1) {
+  background: linear-gradient(71.17deg, #F38478 -88.69%, #5D6AE8 100.06%);
+}
+.listGradientVertical__benefitCallLogs .listGradientVertical__item:nth-child(2) {
+  background: linear-gradient(71.18deg, #F38478 -61.64%, #5D6AE8 127.01%);
+}
+.listGradientVertical__benefitCallLogs .listGradientVertical__item:nth-child(3) {
+  background: linear-gradient(68.59deg, #F38478 -29.7%, #5D6AE8 152.05%);
+}
+.listGradientVertical__benefitCallLogs .listGradientVertical__item:nth-child(4) {
+  background: linear-gradient(68.57deg, #F38478 0%, #5D6AE8 181.87%);
+}
+.listGradientVertical__speechAnalitics .listGradientVertical__item {
+  background: linear-gradient(90deg, #5D6AE8 0%, #00D2FE 100%);
+}
+
+.QA__list, .listGradientVertical {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -435,6 +477,10 @@ html[lang=ar] .all-link svg {
     font-size: 56px;
     padding: 80px 130px;
   }
+}
+
+.fs-32 {
+  font-size: 32px;
 }
 
 @media (min-width: 992px) {
@@ -524,6 +570,16 @@ html[lang=ar] .all-link svg {
   }
   .typesGreet__col__1, .typesGreet__col__2, .typesGreet__col__3, .typesGreet__col__4, .typesGreet__col__5, .typesGreet__col__6 {
     order: 0;
+  }
+  .listGradientVertical__section .listGradientVertical {
+    margin-top: -20px;
+  }
+  .listGradientVertical__item {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .fs-lg-40 {
+    font-size: 40px;
   }
   html[lang=ar] .QA__ans::after {
     margin-left: 20px;

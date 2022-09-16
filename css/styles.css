@@ -35,6 +35,10 @@ html[lang=ar] .all-link svg {
   margin-right: 8px;
   transform: rotate(180deg);
 }
+.ae .textBlockGradient__text,
+html[lang=ar] .textBlockGradient__text {
+  padding-bottom: 4px;
+}
 
 .rtl-no {
   direction: ltr;

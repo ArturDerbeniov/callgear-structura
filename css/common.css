@@ -40,6 +40,17 @@ body {
   }
 }
 
+@media (min-width: 768px) {
+  html[lang=ar] .body-inner {
+    background-position: -15vw 0, calc(((100vw - 768px) / 2 + 4%) * 1) 29vmax, 6vw calc(50% - 800px), calc(((100vw - 768px) / 2 + 100%) * 1) calc(50% + 200px), 95% calc(50% + 1100px), -8% 100%;
+  }
+}
+@media (min-width: 1200px) {
+  html[lang=ar] .body-inner {
+    background-position: -15vw 0, calc(((100vw - 1180px) / 2 + 4%) * 1) 29vmax, 6vw calc(50% - 800px), calc(((100vw - 1180px) / 2 + 100%) * 1) calc(50% + 200px), 95% calc(50% + 1100px), -8% 100%;
+  }
+}
+
 .container-fluid {
   width: 100%;
   padding-right: 20px;

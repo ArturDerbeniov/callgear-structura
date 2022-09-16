@@ -35,6 +35,10 @@
     margin-bottom: 16px;
 }
 
+.features-voice-greeting .features_item {
+    grid-row: auto;
+}
+
 .features_title {
     font-size: 20px;
     line-height: 28px;

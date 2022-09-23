@@ -40,6 +40,10 @@ html[lang=ar] .textBlockGradient__text {
   padding-bottom: 4px;
 }
 
+ul {
+  padding: 0 15px;
+}
+
 .rtl-no {
   direction: ltr;
 }
@@ -151,6 +155,7 @@ html[lang=ar] .textBlockGradient__text {
   height: auto;
 }
 
+.textShadow-wrap,
 .imgShadow-wrap {
   position: relative;
   display: inline-block;
@@ -158,6 +163,10 @@ html[lang=ar] .textBlockGradient__text {
   box-shadow: 0px 8px 40px rgba(0, 0, 0, 0.1);
   border-radius: 36px;
   text-align: center;
+}
+
+.textShadow-wrap {
+  padding: 40px 20px;
 }
 
 .textIcon__wrap {
@@ -176,6 +185,11 @@ html[lang=ar] .textBlockGradient__text {
   font-size: 20px;
   font-weight: 700;
   line-height: 1.4;
+}
+.textIcon__ico__wrap {
+  height: 38px;
+  display: flex;
+  align-items: center;
 }
 
 .QA__list {
@@ -305,6 +319,10 @@ html[lang=ar] .textBlockGradient__text {
     font-size: 40px;
   }
 }
+.textBlockGradient__text .c-purple {
+  -webkit-text-fill-color: #FF0090;
+  text-fill-color: #FF0090;
+}
 .textBlockGradient__violetRed .textBlockGradient__text {
   background: #E60050;
   background: linear-gradient(270deg, #E60050 0%, #5D6AE8 100%);
@@ -387,7 +405,16 @@ html[lang=ar] .textBlockGradient__text {
 .logos {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
   gap: 10px;
+}
+.logos__inner {
+  font-size: 0;
+  line-height: 0;
+  width: 0;
+}
+.logos__inner .logos__item {
+  margin-bottom: 10px;
 }
 .logos__item {
   display: inline-flex;
@@ -397,6 +424,10 @@ html[lang=ar] .textBlockGradient__text {
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
   border-radius: 36px;
   padding: 24px;
+  min-height: 88px;
+  vertical-align: top;
+  font-size: 16px;
+  width: min-content;
 }
 
 .typesPhoneNumbers {
@@ -457,6 +488,32 @@ html[lang=ar] .textBlockGradient__text {
   background: linear-gradient(90deg, #5D6AE8 0%, #00D2FE 100%);
 }
 
+.blTitleAside {
+  display: flex;
+  align-items: flex-start;
+}
+.blTitleAside + .blTitleAside {
+  margin-top: 60px;
+}
+.blTitleAside__content {
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 8px 40px rgba(0, 0, 0, 0.1);
+  border-radius: 36px;
+  padding: 40px 20px;
+}
+.blTitleAside__textCol {
+  display: flex;
+  flex-direction: column;
+  gap: 15px 0;
+}
+.blTitleAside__textCol h6, .blTitleAside__textCol p {
+  margin-bottom: 0;
+}
+.blTitleAside__imgCol {
+  margin-top: 50px;
+  text-align: center;
+}
+
 .QA__list, .listGradientVertical {
   list-style: none;
   margin: 0;
@@ -487,6 +544,24 @@ html[lang=ar] .textBlockGradient__text {
   font-size: 32px;
 }
 
+@media (min-width: 768px) {
+  .logos {
+    flex-direction: row;
+  }
+  .logos__right .logos__inner {
+    margin-left: auto;
+  }
+  .logos__right .logos__inner .logos__item {
+    margin-left: 10px;
+    margin-right: 0;
+  }
+  .logos__inner {
+    width: auto;
+  }
+  .logos__inner .logos__item {
+    margin-right: 10px;
+  }
+}
 @media (min-width: 992px) {
   .section {
     padding: 80px 0;
@@ -582,6 +657,24 @@ html[lang=ar] .textBlockGradient__text {
     padding-left: 40px;
     padding-right: 40px;
   }
+  .textShadow-wrap {
+    padding: 60px 80px;
+  }
+  .blTitleAside + .blTitleAside {
+    margin-top: 20px;
+  }
+  .blTitleAside__title {
+    margin-top: 60px;
+  }
+  .blTitleAside__content {
+    padding: 60px;
+    height: 100%;
+  }
+  .blTitleAside__imgCol {
+    margin-top: 0;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
   .fs-lg-40 {
     font-size: 40px;
   }
@@ -593,6 +686,14 @@ html[lang=ar] .textBlockGradient__text {
   }
   html[lang=ar] .headerPage__imgCol {
     text-align: left;
+  }
+  html[lang=ar] .me-lg-5 {
+    margin-left: 3em !important;
+    margin-right: 0 !important;
+  }
+  html[lang=ar] .ms-lg-5 {
+    margin-left: 0 !important;
+    margin-right: 3em !important;
   }
 }
 @media (min-width: 1200px) {

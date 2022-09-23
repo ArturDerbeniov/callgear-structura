@@ -1,0 +1,48 @@
+.inbound-notifications {
+    display: flex;
+    padding: 80px 0;
+    gap: 40px;
+}
+
+.inbound-notifications-title {
+    margin-bottom: 40px;
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: bold;
+    letter-spacing: -0.03em;
+}
+
+.inbound-notifications-title.title-1 {
+    padding: 26px 60px 0 10px;
+}
+
+.inbound-notifications-description li {
+    margin-top: 10px;
+}
+
+.notifications-methods .inbound-notifications-description,
+.notifications-methods .inbound-notifications-image {
+    width: calc(50% - 20px);
+}
+
+@media (max-width: 992px) {
+    .inbound-notifications {
+        flex-direction: column;
+        align-items: center;
+        padding: 60px 0;
+        gap: 40px
+    }
+
+    .inbound-notifications-title.title1 {
+        padding: 0;
+    }
+
+    .notifications-methods .inbound-notifications-description,
+    .notifications-methods .inbound-notifications-image {
+        width: 100%;
+    }
+
+    .notifications-methods {
+        flex-direction: column-reverse;
+    }
+}

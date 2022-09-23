@@ -1,0 +1,41 @@
+.setting-up-scenarios {
+    position: relative;
+    display: flex;
+}
+
+.setting-up-scenarios picture {
+    position: relative;
+    left: -380px;
+}
+
+.setting-up-scenarios-description {
+    position: absolute;
+    width: 360px;
+    right: 0;
+    top: 160px;
+    padding: 0 10px;
+    flex: 1;
+}
+
+@media (max-width: 1200px) {
+    .setting-up-scenarios {
+        flex-direction: column;
+    }
+
+    .setting-up-scenarios picture {
+        left: 50%;
+        margin-left: -640px;
+    }
+
+    .setting-up-scenarios-description {
+        position: static;
+        width: 100%;
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .setting-up-scenarios picture {
+        margin-left: -225px;
+    }
+}

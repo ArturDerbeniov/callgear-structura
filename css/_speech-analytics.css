@@ -1,0 +1,36 @@
+.how-speech-analytics-work {
+    display: flex;
+    gap: 60px;
+    padding: 60px 80px;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 36px;
+}
+
+.how-speech-analytics-work-description {
+    max-width: 480px;
+}
+
+.how-speech-analytics-work-image {
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 1200px) {
+    .how-speech-analytics-work {
+        gap: 0;
+        padding: 40px 20px;
+    }
+}
+
+@media (max-width: 992px) {
+    .how-speech-analytics-work {
+        flex-direction: column;
+        justify-content: center;
+        gap: 40px;
+    }
+
+    .how-speech-analytics-work-description {
+        max-width: inherit;
+    }
+}

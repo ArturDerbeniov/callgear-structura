@@ -39,6 +39,16 @@ html[lang=ar] .all-link svg {
 html[lang=ar] .textBlockGradient__text {
   padding-bottom: 4px;
 }
+.ae .setting-up-scenarios picture,
+html[lang=ar] .setting-up-scenarios picture {
+  left: inherit;
+  right: -290px;
+}
+.ae .setting-up-scenarios-description,
+html[lang=ar] .setting-up-scenarios-description {
+  right: inherit;
+  left: 0;
+}
 
 ul {
   padding: 0 15px;
@@ -147,10 +157,35 @@ ul {
 }
 
 .imgAllWidth {
+  display: block;
   width: 100vw;
   margin-left: -20px;
+  text-align: center;
 }
 .imgAllWidth img {
+  max-width: 100%;
+  height: auto;
+}
+
+.imgAllWidthAside-colPic {
+  text-align: center;
+}
+.imgAllWidthAside-colPic .imgAllWidthAside-picture {
+  margin-left: -20px;
+}
+.imgAllWidthAside-colPic .imgAllWidthAside-picture img {
+  max-width: 100%;
+  height: auto;
+}
+.imgAllWidthAside-colPic-left {
+  order: 1;
+}
+.imgAllWidthAside-picture {
+  display: block;
+  width: 100vw;
+  min-width: 100vw;
+}
+.imgAllWidthAside-picture img {
   max-width: 100%;
   height: auto;
 }
@@ -681,6 +716,27 @@ ul {
   .fs-lg-40 {
     font-size: 40px;
   }
+  .imgAllWidthAside-colPic {
+    display: flex;
+  }
+  .imgAllWidthAside-colPic-left {
+    order: 0;
+    justify-content: flex-end;
+  }
+  .imgAllWidthAside-colPic-left .imgAllWidthAside-picture img {
+    margin-left: 7%;
+  }
+  .imgAllWidthAside-colPic-right .imgAllWidthAside-picture img {
+    margin-left: -7%;
+  }
+  .imgAllWidthAside-picture {
+    display: block;
+    width: 100vw;
+    min-width: 100vw;
+  }
+  .imgAllWidthAside-picture img {
+    margin-top: -7%;
+  }
   html[lang=ar] .QA__ans::after {
     margin-left: 20px;
     left: 100%;
@@ -698,12 +754,23 @@ ul {
     margin-left: 0 !important;
     margin-right: 3em !important;
   }
+  html[lang=ar] .imgAllWidthAside-colPic-left .imgAllWidthAside-picture img {
+    margin-right: 7%;
+  }
+  html[lang=ar] .imgAllWidthAside-colPic-right .imgAllWidthAside-picture img {
+    margin-right: -25%;
+  }
 }
 @media (min-width: 1200px) {
   .imgAllWidth {
     width: auto;
     margin-left: -50px;
     margin-right: -50px;
+  }
+}
+@media (max-width: 767.98px) {
+  .imgAllWidthAside-colTxt h2 {
+    margin-bottom: 20px;
   }
 }
 /* select2 customize */

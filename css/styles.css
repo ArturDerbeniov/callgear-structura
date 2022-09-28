@@ -443,7 +443,6 @@ ul {
 .logos {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
   gap: 10px;
 }
 .logos__inner {
@@ -583,9 +582,6 @@ ul {
 }
 
 @media (min-width: 768px) {
-  .logos {
-    flex-direction: row;
-  }
   .logos__right .logos__inner {
     margin-left: auto;
   }

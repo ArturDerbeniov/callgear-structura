@@ -50,6 +50,24 @@ html[lang=ar] .setting-up-scenarios-description {
   left: 0;
 }
 
+@media (max-width: 1200px) {
+  html[lang=ar] .setting-up-scenarios picture {
+    right: 50%;
+    margin-right: -640px;
+  }
+  .ae.setting-up-scenarios picture {
+    right: 50%;
+    margin-right: -640px;
+  }
+}
+@media (max-width: 767.98px) {
+  html[lang=ar] .setting-up-scenarios picture {
+    margin-right: -225px;
+  }
+  .ae.setting-up-scenarios picture {
+    margin-right: -225px;
+  }
+}
 ul {
   padding: 0 15px;
 }

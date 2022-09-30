@@ -103,7 +103,7 @@ var bgPage = {
 	],
 	bodyEl: undefined,
 	init: function() {
-		this.bodyEl = document.body;
+		this.bodyEl = document.body.querySelector(".body-inner");
 		this.getNumPage();
 	},
 	getNumPage: function() {

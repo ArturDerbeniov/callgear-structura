@@ -26,22 +26,22 @@ body {
   background-size: 1200px 1200px, 1200px 1200px, 1000px 1000px, 760px 760px;
   background-position: -225px 0, -600px 180vmin, -125px calc(50% + 2000px), -5px 100%;
 }
-body.bg-coral .body-inner {
+.body-inner.bg-coral {
   background-image: radial-gradient(50% 50% at 50% 50%, rgba(243, 132, 120, 0.3) 0%, rgba(243, 132, 120, 0) 100%), radial-gradient(50% 50% at 50% 50%, rgba(93, 106, 232, 0.3) 0%, rgba(93, 106, 232, 0) 100%), radial-gradient(50% 50% at 50% 50%, rgba(243, 132, 120, 0.3) 0%, rgba(243, 132, 120, 0) 100%), radial-gradient(50% 50% at 50% 50%, rgba(93, 106, 232, 0.3) 0%, rgba(93, 106, 232, 0) 100%);
 }
-body.bg-blue .body-inner {
+.body-inner.bg-blue {
   background-image: radial-gradient(50% 50% at 50% 50%, rgba(0, 210, 254, 0.3) 0%, rgba(0, 210, 254, 0) 100%), radial-gradient(50% 50% at 50% 50%, rgba(93, 106, 232, 0.3) 0%, rgba(93, 106, 232, 0) 100%), radial-gradient(50% 50% at 50% 50%, rgba(0, 210, 254, 0.3) 0%, rgba(0, 210, 254, 0) 100%), radial-gradient(50% 50% at 50% 50%, rgba(93, 106, 232, 0.3) 0%, rgba(93, 106, 232, 0) 100%);
 }
-body.bg-red .body-inner {
+.body-inner.bg-red {
   background-image: radial-gradient(50% 50% at 50% 50%, rgba(230, 0, 80, 0.3) 0%, rgba(230, 0, 80, 0) 100%), radial-gradient(50% 50% at 50% 50%, rgba(93, 106, 232, 0.3) 0%, rgba(93, 106, 232, 0) 100%), radial-gradient(50% 50% at 50% 50%, rgba(230, 0, 80, 0.3) 0%, rgba(230, 0, 80, 0) 100%), radial-gradient(50% 50% at 50% 50%, rgba(93, 106, 232, 0.3) 0%, rgba(93, 106, 232, 0) 100%);
 }
-body.bg-long.bg-coral .body-inner {
+.body-inner.bg-long.bg-coral {
   background-image: radial-gradient(50% 50% at 50% 50%, rgba(243, 132, 120, 0.3) 0%, rgba(243, 132, 120, 0) 100%), radial-gradient(50% 50% at 50% 50%, rgba(93, 106, 232, 0.3) 0%, rgba(93, 106, 232, 0) 100%), radial-gradient(50% 50% at 50% 50%, rgba(243, 132, 120, 0.3) 0%, rgba(243, 132, 120, 0) 100%), radial-gradient(50% 50% at 50% 50%, rgba(93, 106, 232, 0.3) 0%, rgba(93, 106, 232, 0) 100%), radial-gradient(50% 50% at 50% 50%, rgba(243, 132, 120, 0.3) 0%, rgba(243, 132, 120, 0) 100%), radial-gradient(50% 50% at 50% 50%, rgba(93, 106, 232, 0.3) 0%, rgba(93, 106, 232, 0) 100%);
 }
-body.bg-long.bg-blue .body-inner {
+.body-inner.bg-long.bg-blue {
   background-image: radial-gradient(50% 50% at 50% 50%, rgba(0, 210, 254, 0.3) 0%, rgba(0, 210, 254, 0) 100%), radial-gradient(50% 50% at 50% 50%, rgba(93, 106, 232, 0.3) 0%, rgba(93, 106, 232, 0) 100%), radial-gradient(50% 50% at 50% 50%, rgba(0, 210, 254, 0.3) 0%, rgba(0, 210, 254, 0) 100%), radial-gradient(50% 50% at 50% 50%, rgba(93, 106, 232, 0.3) 0%, rgba(93, 106, 232, 0) 100%), radial-gradient(50% 50% at 50% 50%, rgba(0, 210, 254, 0.3) 0%, rgba(0, 210, 254, 0) 100%), radial-gradient(50% 50% at 50% 50%, rgba(93, 106, 232, 0.3) 0%, rgba(93, 106, 232, 0) 100%);
 }
-body.bg-long.bg-red .body-inner {
+.body-inner.bg-long.bg-red {
   background-image: radial-gradient(50% 50% at 50% 50%, rgba(230, 0, 80, 0.3) 0%, rgba(230, 0, 80, 0) 100%), radial-gradient(50% 50% at 50% 50%, rgba(93, 106, 232, 0.3) 0%, rgba(93, 106, 232, 0) 100%), radial-gradient(50% 50% at 50% 50%, rgba(230, 0, 80, 0.3) 0%, rgba(230, 0, 80, 0) 100%), radial-gradient(50% 50% at 50% 50%, rgba(93, 106, 232, 0.3) 0%, rgba(93, 106, 232, 0) 100%), radial-gradient(50% 50% at 50% 50%, rgba(230, 0, 80, 0.3) 0%, rgba(230, 0, 80, 0) 100%), radial-gradient(50% 50% at 50% 50%, rgba(93, 106, 232, 0.3) 0%, rgba(93, 106, 232, 0) 100%);
 }
 @media (min-width: 768px) {
@@ -55,18 +55,18 @@ body.bg-long.bg-red .body-inner {
     background-position: 25vw -100px, calc(((100vw - 1180px) / 2 + 4%) * -1) 30vmax, 50% 50%, calc(100% + 100px) 100%;
   }
 }
-body.bg-long .body-inner {
+.body-inner.bg-long {
   background-size: 1200px 1200px, 1200px 1200px, 800px 800px, 1000px 1000px, 1000px 1000px, 760px 760px;
   background-position: -225px 0, -600px 180vmin, -25px calc(50% - 800px), -500px calc(50% + 1000px), -125px calc(50% + 2000px), -5px 100%;
 }
 @media (min-width: 768px) {
-  body.bg-long .body-inner {
+  .body-inner.bg-long {
     background-size: 83vw 83vw, 83vw 83vw, 55vw 55vw, 69vw 69vw, 69vw 69vw, 53vw 53vw;
     background-position: 25vw 0, calc(((100vw - 768px) / 2 + 4%) * -1) 30vmax, 45vw calc(50% - 400px), calc(((100vw - 768px) / 2 + 0%) * -1) calc(50% + 400px), 50% 82%, calc(100% + 100px) 100%;
   }
 }
 @media (min-width: 1200px) {
-  body.bg-long .body-inner {
+  .body-inner.bg-long {
     background-position: 25vw -100px, calc(((100vw - 1180px) / 2 + 4%) * -1) 30vmax, 45vw calc(50% - 400px), calc(((100vw - 1180px) / 2 + 0%) * -1) calc(50% + 400px), 50% 82%, calc(100% + 100px) 100%;
   }
 }
@@ -82,12 +82,12 @@ body.bg-long .body-inner {
   }
 }
 @media (min-width: 768px) {
-  html[lang=ar] body.bg-long .body-inner {
+  html[lang=ar] .body-inner.bg-long {
     background-position: -15vw -100px, calc(((100vw - 768px) / 2 + 10%) * 1) 29vmax, 0 calc(50% - 400px), calc(((100vw - 768px) / 2 + 100%) * 1) calc(50% + 400px), 50% 82%, -8% 100%;
   }
 }
 @media (min-width: 1200px) {
-  html[lang=ar] body.bg-long .body-inner {
+  html[lang=ar] .body-inner.bg-long {
     background-position: -15vw -100px, calc(((100vw - 1180px) / 2 + 100%) * 1) 29vmax, 0 calc(50% - 400px), calc(((100vw - 1180px) / 2 + 100%) * 1) calc(50% + 400px), 50% 82%, -8% 100%;
   }
 }

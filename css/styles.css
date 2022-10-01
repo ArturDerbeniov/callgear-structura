@@ -580,6 +580,10 @@ ul {
   border: none;
   display: block;
   width: 100%;
+  color: #000 !important;
+}
+.card:hover {
+  box-shadow: 0px 12px 40px rgba(0, 0, 0, 0.15);
 }
 .card__inner {
   padding: 30px;

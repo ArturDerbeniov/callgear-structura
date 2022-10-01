@@ -181,6 +181,19 @@ h6, .h6 {
     margin-bottom: 20px;
   }
 }
+a {
+  color: #FF0090;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #FF0090;
+}
+
+a:hover {
+  color: #cc0073;
+}
+
 p {
   margin-bottom: 15px;
   line-height: 1.5;

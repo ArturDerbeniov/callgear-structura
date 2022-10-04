@@ -739,6 +739,9 @@ ul {
   flex-direction: column;
   gap: 80px;
 }
+.sectionOnMain-btnsRainbow-mobile .btn {
+  width: auto !important;
+}
 
 .sectionOnMain-btnsRainbow-desctop {
   display: none;

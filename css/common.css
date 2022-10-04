@@ -31,6 +31,11 @@ body {
   background-size: 1200px 1200px, 760px 760px;
   background-position: 50% 0, calc(100% + 100px) 100%;
 }
+.body-inner.indexPage {
+  background-image: radial-gradient(50% 50% at 50% 50%, rgba(93, 106, 232, 0.2) 0%, rgba(93, 106, 232, 0) 100%), radial-gradient(50% 50% at 50% 50%, rgba(243, 132, 120, 0.2) 0%, rgba(243, 132, 120, 0) 100%), radial-gradient(50% 50% at 50% 50%, rgba(93, 106, 232, 0.2) 0%, rgba(93, 106, 232, 0) 100%), radial-gradient(50% 50% at 50% 50%, rgba(243, 132, 120, 0.2) 0%, rgba(243, 132, 120, 0) 100%), radial-gradient(50% 50% at 50% 50%, rgba(93, 106, 232, 0.2) 0%, rgba(93, 106, 232, 0) 100%) !important;
+  background-size: 1040px 1040px, 660px 660px, 960px 960px, 960px 960px, 760px 760px !important;
+  background-position: 100% -100px, calc(50% - 330px) 500px, -150px 50%, 50% calc(50% + 500px), 100% 100% !important;
+}
 .body-inner.bg-coral {
   background-image: radial-gradient(50% 50% at 50% 50%, rgba(243, 132, 120, 0.3) 0%, rgba(243, 132, 120, 0) 100%), radial-gradient(50% 50% at 50% 50%, rgba(93, 106, 232, 0.3) 0%, rgba(93, 106, 232, 0) 100%), radial-gradient(50% 50% at 50% 50%, rgba(243, 132, 120, 0.3) 0%, rgba(243, 132, 120, 0) 100%), radial-gradient(50% 50% at 50% 50%, rgba(93, 106, 232, 0.3) 0%, rgba(93, 106, 232, 0) 100%);
 }
@@ -79,6 +84,9 @@ body {
 @media (min-width: 768px) {
   html[lang=ar] .body-inner {
     background-position: -15vw 100px, calc(((100vw - 768px) / 2 + 100%) * 1) 29vmax, 50% 68%, -8% 100%;
+  }
+  html[lang=ar] .body-inner.indexPage {
+    background-position: 0 -100px, calc(50% + 330px) 500px, calc(100% + 150px) 50%, 50% calc(50% + 500px), 0 100% !important;
   }
 }
 @media (min-width: 1200px) {

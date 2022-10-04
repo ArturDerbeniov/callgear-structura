@@ -68,6 +68,18 @@ html[lang=ar] .setting-up-scenarios-description {
     margin-right: -225px;
   }
 }
+.ls-0 {
+  letter-spacing: 0 !important;
+}
+
+.bg-none {
+  background: none !important;
+}
+
+.shadow-none {
+  box-shadow: none !important;
+}
+
 ul {
   padding: 0 15px;
 }
@@ -93,6 +105,44 @@ ul {
 
 .btn:focus {
   box-shadow: none;
+}
+.btn__group {
+  display: inline-block;
+  padding: 4px;
+  border-radius: 16px;
+  background-color: rgba(0, 0, 0, 0.05);
+  margin-bottom: 40px;
+}
+.btn__group .btn {
+  background: none;
+  text-shadow: none;
+  margin: 0;
+  box-shadow: none;
+  color: #000 !important;
+  min-height: 40px;
+  padding: 8px 16px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 400;
+  width: auto;
+}
+.btn__group .btn.active {
+  background-color: #fff;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+}
+.btn-bordRainbow {
+  box-shadow: none;
+  background: none;
+  font-weight: 400;
+  font-size: 20px;
+  border: 1px solid transparent;
+  color: #000 !important;
+  text-shadow: none;
+  background: linear-gradient(#fff, #fff) padding-box, linear-gradient(to right, rgb(93, 106, 232), rgb(243, 132, 120), darkorchid) border-box;
+}
+.btn-bordRainbow.disabled {
+  border-color: #999;
+  color: #999 !important;
 }
 
 .tab-btn {
@@ -603,13 +653,63 @@ ul {
   margin-bottom: 8px;
 }
 
+.cardCite {
+  height: 100%;
+  line-height: 1.5;
+}
+.cardCite__inner {
+  position: relative;
+  height: 100%;
+  padding: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.cardCite__inner::before {
+  content: "''";
+  font-size: 56px;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.3);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  position: absolute;
+  left: 40px;
+  top: 20px;
+}
+.cardCite__txt {
+  margin: 40px 0 20px;
+}
+
+.cardStyle2 {
+  height: 100%;
+  line-height: 1.5;
+}
+.cardStyle2:hover .lnk-imit {
+  text-decoration: underline;
+}
+.cardStyle2__inner {
+  height: 100%;
+  padding: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.cardStyle2__title {
+  font-size: 20px;
+  margin: 30px 0 10px;
+}
+.cardStyle2__intro {
+  margin-top: auto;
+}
+
 .QA__list, .listGradientVertical {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.textBlockGradient, .card {
+.textBlockGradient, .card, .cardCite {
   background: rgba(255, 255, 255, 0.5);
   box-shadow: 0px 8px 40px rgba(0, 0, 0, 0.1);
   border-radius: 36px;
@@ -633,6 +733,33 @@ ul {
   font-size: 32px;
 }
 
+.sectionOnMain-btnsRainbow-desctop {
+  display: none;
+}
+.sectionOnMain-btnsRainbow-desctop .btnsRainbow-btnsCol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-content: flex-start;
+}
+.sectionOnMain-btnsRainbow-desctop .btnsRainbow-btnsCol .btn {
+  margin: 0;
+}
+.sectionOnMain-btnsRainbow-desctop .btnsRainbow-btnsCol-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.sectionOnMain-btnsRainbow-desctop .btnsRainbow-title {
+  margin-left: 50px;
+}
+
+.btnsRainbow-titleCol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 400px;
+}
+
 @media (min-width: 768px) {
   .logos__right .logos__inner {
     margin-left: auto;
@@ -647,13 +774,19 @@ ul {
   .logos__inner .logos__item {
     margin-right: 10px;
   }
-  .card {
+  .cardList .card {
     width: calc(50% - 15px);
   }
 }
 @media (min-width: 992px) {
   .section {
     padding: 80px 0;
+  }
+  .sectionOnMain-btnsRainbow-mobile {
+    display: none;
+  }
+  .sectionOnMain-btnsRainbow-desctop {
+    display: block;
   }
   .headerPage__imgCol {
     text-align: right;
@@ -788,7 +921,7 @@ ul {
   .imgAllWidthAside-picture img {
     margin-top: -7%;
   }
-  .card {
+  .cardList .card {
     width: calc(33.3333333333% - 15px);
   }
   html[lang=ar] .QA__ans::after {
@@ -821,12 +954,22 @@ ul {
     margin-left: -50px;
     margin-right: -50px;
   }
-  .card {
+  .cardList .card {
     width: calc(25% - 15px);
+  }
+}
+@media (max-width: 575.98px) {
+  .row.d-flex .col-12 {
+    margin-bottom: 20px;
   }
 }
 @media (max-width: 767.98px) {
   .imgAllWidthAside-colTxt h2 {
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 991.98px) {
+  .row.d-flex .col-md-6 {
     margin-bottom: 20px;
   }
 }

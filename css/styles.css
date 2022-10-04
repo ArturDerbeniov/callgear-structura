@@ -733,6 +733,13 @@ ul {
   font-size: 32px;
 }
 
+.sectionOnMain-pros {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 80px;
+}
+
 .sectionOnMain-btnsRainbow-mobile {
   display: flex;
   flex-wrap: wrap;
@@ -741,6 +748,7 @@ ul {
 }
 .sectionOnMain-btnsRainbow-mobile .btn {
   width: auto !important;
+  margin-bottom: 10px;
 }
 
 .sectionOnMain-btnsRainbow-desctop {

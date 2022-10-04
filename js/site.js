@@ -1,5 +1,12 @@
 document.addEventListener("click", eventDocClick, false);
 
+AOS.init();
+
+var rellax = new Rellax('.rellax', {
+	center: true,
+	zIndex:-1
+});
+
 function eventDocClick(e) {
     var targ = e.target;
     var clickedEl = e.target;

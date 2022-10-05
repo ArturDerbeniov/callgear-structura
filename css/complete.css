@@ -10,4 +10,6 @@
 @import 'virtual-mnumbers.css';
 @import 'integrations.css';
 @import 'api.css';
+@import 'callback-missed.css';
+@import 'callback-widget.css';
 @import 'styles.css';

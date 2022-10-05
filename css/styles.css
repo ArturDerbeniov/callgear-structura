@@ -49,6 +49,20 @@ html[lang=ar] .setting-up-scenarios-description {
   right: inherit;
   left: 0;
 }
+.ae .callback-widget-work-item:not(:last-child):after,
+html[lang=ar] .callback-widget-work-item:not(:last-child):after {
+  left: inherit;
+  right: 43px;
+}
+.ae .callback-widget-image1,
+.ae .callback-widget-image2,
+.ae .callback-widget-image3,
+html[lang=ar] .callback-widget-image1,
+html[lang=ar] .callback-widget-image2,
+html[lang=ar] .callback-widget-image3 {
+  left: inherit;
+  right: -200px;
+}
 
 @media (max-width: 1200px) {
   html[lang=ar] .setting-up-scenarios picture {
@@ -58,6 +72,12 @@ html[lang=ar] .setting-up-scenarios-description {
   .ae.setting-up-scenarios picture {
     right: 50%;
     margin-right: -640px;
+  }
+}
+@media (max-width: 992px) {
+  html[lang=ar] .callback-widget-work-item:not(:last-child):after {
+    left: inherit;
+    right: 20px;
   }
 }
 @media (max-width: 767.98px) {

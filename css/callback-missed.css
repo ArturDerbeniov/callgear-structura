@@ -1,0 +1,54 @@
+.stop-loosing-calls {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.stop-loosing-calls-item {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 36px;
+}
+
+.stop-loosing-calls-item-title {
+    margin-bottom: 10px;
+    font-size: 20px;
+    line-height: 28px;
+}
+
+.stop-loosing-calls-item-text {
+    margin-bottom: 40px;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.rule-settings {
+    display: flex;
+    gap: 80px
+}
+
+.rule-settings-description {
+    padding-top: 30px;
+}
+
+@media (max-width: 992px) {
+    .stop-loosing-calls {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .stop-loosing-calls h2 {
+        margin-bottom: 20px;
+    }
+
+    .rule-settings {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 40px;
+    }
+}
+

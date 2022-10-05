@@ -1,11 +1,155 @@
 document.addEventListener("click", eventDocClick, false);
 
-AOS.init();
+gsap.registerPlugin(ScrollTrigger);
 
-var rellax = new Rellax('.rellax', {
-	center: true,
-	zIndex:-1
+//=============================================//
+///////////////// pined pics ////////////////////
+//=============================================//
+(function() {
+
+const ST1 = ScrollTrigger.create({
+  trigger: ".sectionOnMain-pros",
+  start: "top top",
+  end: "bottom bottom",
+  onUpdate: getCurrentSection,
+  pin: ".asidePics"
 });
+
+const contentMarkers = gsap.utils.toArray(".asideText-title");
+
+contentMarkers.forEach(marker => {
+  marker.content = document.querySelector(`#${marker.dataset.markerContent}`);
+  
+  if(marker.content.tagName === "IMG") {
+    gsap.set(marker.content, {transformOrigin: "center"});
+    
+    marker.content.enter = function() {
+      gsap.fromTo(marker.content, {autoAlpha: 0, rotateY: -30}, {duration: 0.3, autoAlpha: 1, rotateY: 0});
+    }
+  } 
+  
+  marker.content.leave = function() {
+    gsap.to(marker.content, {duration: 0.1, autoAlpha: 0});
+  }
+  
+});
+
+let lastContent;
+function getCurrentSection() {
+  let newContent;
+  const currScroll = scrollY;
+  
+  contentMarkers.forEach(marker => {
+    if(currScroll > marker.offsetTop) {
+      newContent = marker.content;
+    }
+  });
+  
+  if(newContent && 
+  	(lastContent == null || !newContent.isSameNode(lastContent))) {
+    if(lastContent) {
+      lastContent.leave();
+    }
+    
+    newContent.enter();
+    
+    lastContent = newContent;
+  }
+}
+
+const media = window.matchMedia("screen and (max-width: 992px)");
+ScrollTrigger.addEventListener("refreshInit", checkSTState);
+checkSTState();
+
+function checkSTState() {
+  if(media.matches) {
+    ST1.disable();
+  } else {
+    ST1.enable();
+  }
+}
+})();
+
+//=============================================//
+///////////////// pined btns ////////////////////
+//=============================================//
+(function() {
+
+const ST = ScrollTrigger.create({
+  trigger: ".sectionOnMain-btnsRainbow",
+  start: "top top",
+  end: "bottom bottom",
+  onUpdate: getCurrentSection,
+  pin: ".btnsRainbow-btnsCol-inner"
+});
+
+const contentMarkers = gsap.utils.toArray(".btnsRainbow-title");
+
+contentMarkers.forEach(marker => {
+  marker.content = document.querySelector(`#${marker.dataset.markerContent}`);
+  
+  if(marker.content.tagName === "SPAN") {
+    
+    marker.content.enter = function() {
+      marker.content.classList.add("active");
+      document.querySelectorAll("." + marker.content.id).forEach(btn => {
+      	btn.classList.add("active");
+      	btn.classList.remove("disabled");
+      });
+    }
+  } 
+  
+  marker.content.leave = function() {
+    marker.content.classList.remove("active");
+    document.querySelectorAll("." + marker.content.id).forEach(btn => {
+      	btn.classList.remove("active");
+      	btn.classList.add("disabled");
+      });
+  }
+  
+});
+
+let lastContent;
+function getCurrentSection() {
+  let newContent;
+  const currScroll = scrollY;
+  
+  contentMarkers.forEach(marker => {
+    if(currScroll > marker.offsetTop) {
+      newContent = marker.content;
+    }
+  });
+  
+  if(newContent && 
+  	(lastContent == null || !newContent.isSameNode(lastContent))) {
+    if(lastContent) {
+      lastContent.leave();
+    }
+    
+    newContent.enter();
+    
+    lastContent = newContent;
+  }
+}
+
+const media = window.matchMedia("screen and (max-width: 992px)");
+ScrollTrigger.addEventListener("refreshInit", checkSTState);
+checkSTState();
+
+function checkSTState() {
+  if(media.matches) {
+    ST.disable();
+  } else {
+    ST.enable();
+  }
+}
+})();
+
+//=============================================//
+///////////////// pined btns end ////////////////
+//=============================================//
+
+AOS.init();
 
 function eventDocClick(e) {
     var targ = e.target;

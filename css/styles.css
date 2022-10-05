@@ -743,6 +743,7 @@ ul {
 }
 .sectionOnMain-btnsRainbow .btnsRainbow-title-mobile {
   margin-top: 80px;
+  width: 100%;
 }
 
 .fs-32 {
@@ -1027,6 +1028,9 @@ ul {
   }
   .cardList .card {
     width: calc(25% - 15px);
+  }
+  .sectionOnMain-cardsRow {
+    overflow: unset;
   }
 }
 @media (max-width: 575.98px) {

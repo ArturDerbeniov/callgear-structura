@@ -136,7 +136,7 @@ ul {
   font-weight: 400;
   font-size: 20px;
   text-shadow: none;
-  border: 3px solid transparent;
+  border: 1px solid transparent;
   color: #000 !important;
   background: linear-gradient(#fff, #fff) padding-box, linear-gradient(to right, rgb(93, 106, 232), rgb(243, 132, 120), darkorchid) border-box;
 }
@@ -144,6 +144,9 @@ ul {
   border-color: #999;
   color: #999 !important;
   border-width: 1px;
+}
+.btn-bordRainbow:not(.disabled):hover {
+  background: linear-gradient(90deg, #5D6AE8 0%, #F38478 100%);
 }
 
 .tab-btn {
@@ -708,6 +711,8 @@ ul {
   display: flex;
   flex-wrap: nowrap;
   overflow: auto;
+  padding: 32px 0;
+  margin-top: -32px;
 }
 .sectionOnMain-cardsRow .cardCite,
 .sectionOnMain-cardsRow .card {
@@ -737,7 +742,7 @@ ul {
   gap: 10px;
 }
 .sectionOnMain-btnsRainbow .btnsRainbow-btnsCol-inner .btn.active {
-  border: 3px solid transparent;
+  border: 1px solid transparent;
   color: #000 !important;
   background: linear-gradient(#fff, #fff) padding-box, linear-gradient(to right, rgb(93, 106, 232), rgb(243, 132, 120), darkorchid) border-box;
 }
@@ -808,7 +813,7 @@ ul {
     padding-bottom: 50%;
   }
   .sectionOnMain-pros .asideText-title {
-    padding-top: 50vh;
+    padding-top: 25vh;
   }
   .sectionOnMain-pros .asidePics {
     position: relative;
@@ -818,9 +823,11 @@ ul {
   .sectionOnMain-pros .asidePics img {
     position: absolute;
     top: 50%;
-    transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-180px, -180px, 0);
     left: 50%;
     opacity: 0;
+    width: 360px;
+    height: 360px;
   }
   .sectionOnMain-btnsRainbow {
     padding-top: 0;
@@ -842,7 +849,7 @@ ul {
     align-content: center;
   }
   .sectionOnMain-btnsRainbow .btnsRainbow-btnsCol-inner .btn.active {
-    border: 3px solid transparent;
+    border: 1px solid transparent;
     color: #000 !important;
     background: linear-gradient(#fff, #fff) padding-box, linear-gradient(to right, rgb(93, 106, 232), rgb(243, 132, 120), darkorchid) border-box;
   }
@@ -1059,7 +1066,7 @@ ul {
     margin-bottom: 20px;
   }
   .sectionOnMain-btnsRainbow .btn-bordRainbow {
-    border: 3px solid transparent;
+    border: 1px solid transparent;
     color: #000 !important;
     background: linear-gradient(#fff, #fff) padding-box, linear-gradient(to right, rgb(93, 106, 232), rgb(243, 132, 120), darkorchid) border-box;
   }

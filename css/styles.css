@@ -102,6 +102,9 @@ ul {
 .section {
   padding: 60px 0;
 }
+.section h2 small, .section .h2 small {
+  font-weight: 400;
+}
 
 .btn:focus {
   box-shadow: none;
@@ -138,15 +141,27 @@ ul {
   text-shadow: none;
   border: 1px solid transparent;
   color: #000 !important;
-  background: linear-gradient(#fff, #fff) padding-box, linear-gradient(to right, rgb(93, 106, 232), rgb(243, 132, 120), darkorchid) border-box;
 }
-.btn-bordRainbow.disabled {
-  border-color: #999;
-  color: #999 !important;
-  border-width: 1px;
+.btn-bordRainbow.btns-1, .btn-bordRainbow.btns-1:not(.disabled) {
+  background: linear-gradient(#fff, #fff) padding-box, linear-gradient(90deg, #5D6AE8 0%, #F38478 100%) border-box;
+}
+.btn-bordRainbow.btns-2, .btn-bordRainbow.btns-2:not(.disabled) {
+  background: linear-gradient(#fff, #fff) padding-box, linear-gradient(270deg, #E60050 0%, #5D6AE8 100%) border-box;
+}
+.btn-bordRainbow.btns-3, .btn-bordRainbow.btns-3:not(.disabled) {
+  background: linear-gradient(#fff, #fff) padding-box, linear-gradient(90deg, #5D6AE8 0%, #00D2FE 100%) border-box;
 }
 .btn-bordRainbow:not(.disabled):hover {
-  background: linear-gradient(90deg, #5D6AE8 0%, #F38478 100%);
+  color: #fff !important;
+}
+.btn-bordRainbow.btns-1:not(.disabled):hover {
+  background: linear-gradient(90deg, #5D6AE8 0%, #F38478 100%) !important;
+}
+.btn-bordRainbow.btns-2:not(.disabled):hover {
+  background: linear-gradient(270deg, #E60050 0%, #5D6AE8 100%) !important;
+}
+.btn-bordRainbow.btns-3:not(.disabled):hover {
+  background: linear-gradient(90deg, #5D6AE8 0%, #00D2FE 100%) !important;
 }
 
 .tab-btn {
@@ -740,15 +755,95 @@ ul {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-}
-.sectionOnMain-btnsRainbow .btnsRainbow-btnsCol-inner .btn.active {
-  border: 1px solid transparent;
-  color: #000 !important;
-  background: linear-gradient(#fff, #fff) padding-box, linear-gradient(to right, rgb(93, 106, 232), rgb(243, 132, 120), darkorchid) border-box;
+  /* .btn.active {
+  	border: 1px solid transparent;
+  	color: #000;
+  	background: 
+      linear-gradient(#fff, #fff) padding-box,
+      linear-gradient(to right, rgba(93, 106, 232, 1), rgba(243, 132, 120, 1), darkorchid) border-box;
+  }   */
 }
 .sectionOnMain-btnsRainbow .btnsRainbow-title-mobile {
   margin-top: 80px;
   width: 100%;
+}
+
+.team__container {
+  max-width: 370px;
+  height: 500px;
+  position: relative;
+  margin: 0 auto;
+}
+.team__employee {
+  position: absolute;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.33;
+  width: 96px;
+}
+.team__employee__img {
+  box-shadow: 0px 8px 40px rgba(0, 0, 0, 0.1);
+  border-radius: 24px;
+  border: 2px solid #fff;
+  overflow: hidden;
+  margin: auto;
+  width: 64px;
+  height: 64px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.team__employee__img img {
+  max-width: 100%;
+}
+.team__employee__name {
+  margin: 8px 0 4px;
+}
+.team__employee__func {
+  color: rgba(0, 0, 0, 0.3);
+}
+.team__employee.george .team__employee__img, .team__employee.alibala .team__employee__img {
+  width: 80px;
+  height: 80px;
+}
+.team__employee.alibala {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.team__employee.george {
+  top: 164px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.team__employee.valery {
+  left: 0;
+  top: 40px;
+}
+.team__employee.arty {
+  right: 0;
+  top: 40px;
+}
+.team__employee.galya {
+  left: 0;
+  top: 188px;
+}
+.team__employee.brigita {
+  right: 0;
+  top: 220px;
+}
+.team__employee.ayman {
+  top: 352px;
+  left: 0;
+}
+.team__employee.alex {
+  top: 360px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.team__employee.shinar {
+  top: 400px;
+  right: 0;
 }
 
 .fs-32 {
@@ -813,7 +908,7 @@ ul {
     padding-bottom: 50%;
   }
   .sectionOnMain-pros .asideText-title {
-    padding-top: 25vh;
+    padding-top: 50vh;
   }
   .sectionOnMain-pros .asidePics {
     position: relative;
@@ -847,14 +942,21 @@ ul {
     display: flex;
     flex-wrap: wrap;
     align-content: center;
-  }
-  .sectionOnMain-btnsRainbow .btnsRainbow-btnsCol-inner .btn.active {
-    border: 1px solid transparent;
-    color: #000 !important;
-    background: linear-gradient(#fff, #fff) padding-box, linear-gradient(to right, rgb(93, 106, 232), rgb(243, 132, 120), darkorchid) border-box;
+    /* .btn.active {
+    	border: 1px solid transparent;
+    	color: #000;
+    	background: 
+        linear-gradient(#fff, #fff) padding-box,
+        linear-gradient(to right, rgba(93, 106, 232, 1), rgba(243, 132, 120, 1), darkorchid) border-box;
+    } */
   }
   .sectionOnMain-btnsRainbow .btnsRainbow-btnsCol-inner .btnsGroupSep {
     position: absolute;
+  }
+  .btn-bordRainbow.disabled {
+    border-color: #999;
+    color: #999 !important;
+    border-width: 1px;
   }
   .headerPage__imgCol {
     text-align: right;
@@ -1065,10 +1167,19 @@ ul {
   .row.d-flex .col-md-6 {
     margin-bottom: 20px;
   }
-  .sectionOnMain-btnsRainbow .btn-bordRainbow {
-    border: 1px solid transparent;
-    color: #000 !important;
-    background: linear-gradient(#fff, #fff) padding-box, linear-gradient(to right, rgb(93, 106, 232), rgb(243, 132, 120), darkorchid) border-box;
+  /* .sectionOnMain-btnsRainbow .btn-bordRainbow {
+  	border: 1px solid transparent;
+  	color: #000 !important;
+  	background: 
+      linear-gradient(#fff, #fff) padding-box,
+      linear-gradient(to right, rgba(93, 106, 232, 1), rgba(243, 132, 120, 1), darkorchid) border-box;
+  } */
+  .btn-bordRainbow.disabled {
+    opacity: 1;
+    pointer-events: none;
+  }
+  .sectionOnMain-cardsRow {
+    margin-right: -20px;
   }
 }
 /* select2 customize */

@@ -24,12 +24,12 @@ contentMarkers.forEach(marker => {
     gsap.set(marker.content, {transformOrigin: "center"});
     
     marker.content.enter = function() {
-      gsap.fromTo(marker.content, {autoAlpha: 0, rotateY: -30}, {duration: 0.3, autoAlpha: 1, rotateY: 0});
+      gsap.fromTo(marker.content, {autoAlpha: 0, rotateY: 0}, {duration: 0, autoAlpha: 1, rotateY: 0});
     }
   } 
   
   marker.content.leave = function() {
-    gsap.to(marker.content, {duration: 0.1, autoAlpha: 0});
+    gsap.to(marker.content, {duration: 0, autoAlpha: 0});
   }
   
 });

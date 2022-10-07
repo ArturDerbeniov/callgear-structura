@@ -114,6 +114,15 @@ ul {
   transform: none !important;
   margin-right: 0 !important;
 }
+.rtl-yes {
+  direction: rtl;
+}
+.rtl-yes * {
+  direction: rtl;
+}
+.rtl-yes .lnk-start-callTracking img {
+  transform: scale(-1, 1);
+}
 
 .pointer-events-no {
   pointer-events: none;
@@ -222,8 +231,17 @@ ul {
   padding: 0 15px;
 }
 .tab-content-imgCol {
-  margin-top: 50px;
+  margin-top: 40px;
   text-align: center;
+}
+.tab-content-clean {
+  padding: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+.tab-content-imgAllWScaled {
+  transform: scale(1.2);
+  width: 100%;
 }
 .tab-nav {
   gap: 4px;
@@ -866,8 +884,36 @@ ul {
   right: 0;
 }
 
+.lnk-start {
+  display: inline-flex;
+  gap: 5px;
+}
+.lnk-start-callTracking {
+  position: absolute;
+  top: 100%;
+  margin-top: 10px;
+  left: 0;
+  right: 0;
+  padding: 0 21px;
+}
+
+.mb-20px {
+  margin-bottom: 20px;
+}
+
+.mt-20px {
+  margin-top: 20px;
+}
+
 .fs-32 {
   font-size: 32px;
+}
+.fs-24 {
+  font-size: 24px;
+}
+
+.lh-133 {
+  line-height: 1.33;
 }
 
 .QA__list, .listGradientVertical {
@@ -1006,6 +1052,11 @@ ul {
   .tab-content-imgCol img {
     max-width: 100%;
     height: auto;
+  }
+  .tab-content-imgAllWScaled {
+    transform: scale(1.5);
+    margin-left: 150px;
+    margin-top: 57px;
   }
   .QA__list {
     gap: 20px 0;

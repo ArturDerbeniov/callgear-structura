@@ -1,0 +1,36 @@
+.wow-effect {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 10px;
+}
+
+.wow-effect-form {
+    width: 400px;
+    height: 460px;
+    justify-self: center;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 36px;
+}
+
+.wow-effect-description {
+    padding: 33px 40px 46px;
+    font-size: 20px;
+    line-height: 28px;
+}
+
+@media (max-width: 767.98px) {
+    .wow-effect {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 40px;
+    }
+
+    .wow-effect-form {
+        width: auto;
+    }
+
+    .wow-effect-description {
+        padding: 0;
+    }
+}

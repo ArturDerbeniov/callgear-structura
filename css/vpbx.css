@@ -20,9 +20,11 @@
     width: 100%;
 }
 
+.vpbx-video-container iframe,
 .vpbx-video-iframe {
     width: 100%;
     height: 100%;
+    display: block;
 }
 
 .vpbx-video-container {
@@ -33,11 +35,6 @@
     right: 0;
     background: #000;
     border-radius: 60px;
-}
-.vpbx-video-container iframe {
-    width: 100%;
-    height: 100%;
-    display: block;
 }
 
 .vpbx-features {

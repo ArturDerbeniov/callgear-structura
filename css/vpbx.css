@@ -34,7 +34,7 @@
     left: 0;
     right: 0;
     background: #000;
-    border-radius: 60px;
+    border-radius: 18px;
 }
 
 .vpbx-features {
@@ -89,3 +89,19 @@
         width: auto;
     }
 }
+@media (min-width: 767.98px) {
+    .vpbx-video-container {
+        border-radius: 35px;
+    }
+}
+@media (min-width: 992px) {
+    .vpbx-video-container {
+        border-radius: 47px;
+    }
+}
+@media (min-width: 1200px) {
+    .vpbx-video-container {
+        border-radius: 56px;
+    }
+}
+

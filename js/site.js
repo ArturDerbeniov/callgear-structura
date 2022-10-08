@@ -7,6 +7,8 @@ gsap.registerPlugin(ScrollTrigger);
 //=============================================//
 (function() {
 
+if(!document.querySelector(".sectionOnMain-pros")) return;
+
 const ST1 = ScrollTrigger.create({
   trigger: ".sectionOnMain-pros",
   start: "top top",
@@ -74,6 +76,8 @@ function checkSTState() {
 ///////////////// pined btns ////////////////////
 //=============================================//
 (function() {
+
+if(!document.querySelector(".sectionOnMain-btnsRainbow")) return;
 
 const ST = ScrollTrigger.create({
   trigger: ".sectionOnMain-btnsRainbow",
@@ -209,6 +213,34 @@ function initAudioPlayer(numPlayer) {
 			toggleDuration: true
 		});
 	}
+}
+
+var videoYT = {
+	init: function(sender, idVideo) {
+		document.getElementById("video").innerHTML = "<div id='player' data-idvideo='" + idVideo + "'></div>";
+
+	    var tag = document.createElement('script');
+	    tag.src = "https://www.youtube.com/iframe_api";
+	    var firstScriptTag = document.getElementsByTagName('script')[0];
+	    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+	    sender.style.display = "none";
+	},
+	onPlayerReady: function(e) {
+		// e.target.playVideo();
+	}
+	
+} 							
+function onYouTubeIframeAPIReady() {
+    new YT.Player('player', {
+        height: '390',
+        width: '640',
+        videoId: 'tYQJeKZCB7w',
+        playerVars: { 'rel': 0, 'showinfo':0, 'controls': 1, 'fs':0 , 'autoplay':1, '	origin':'https%3A%2F%2Fcallgear.ae'},
+        /*events: {
+            'onReady': window.videoYT.onPlayerReady
+        }*/
+    });
 }
 
 var bgPage = {

@@ -3,15 +3,14 @@
 @import 'features.css';
 @import 'blog.css';
 @import 'all-link.css';
+@import 'vpbx.css';
 @import 'virtual-mnumbers.css';
 @import 'call-scenarios.css';
-@import 'call-tracking.css';
 @import 'inbound-notifications.css';
 @import 'analytics-reports.css';
 @import 'virtual-mnumbers.css';
 @import 'integrations.css';
 @import 'api.css';
-@import 'web-form-auto-callback.css';
 @import 'callback-missed.css';
 @import 'callback-widget.css';
 @import 'styles.css';

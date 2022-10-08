@@ -63,6 +63,20 @@ html[lang=ar] .callback-widget-image3 {
   left: inherit;
   right: -200px;
 }
+.ae .timeline-features-item:not(:last-child):after,
+html[lang=ar] .timeline-features-item:not(:last-child):after {
+  left: inherit;
+  right: 43px;
+}
+.ae .timeline-features-image1,
+.ae .timeline-features-image2,
+.ae .timeline-features-image3,
+html[lang=ar] .timeline-features-image1,
+html[lang=ar] .timeline-features-image2,
+html[lang=ar] .timeline-features-image3 {
+  left: inherit;
+  right: -200px;
+}
 
 @media (max-width: 1200px) {
   html[lang=ar] .setting-up-scenarios picture {

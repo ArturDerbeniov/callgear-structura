@@ -1,0 +1,57 @@
+.form-tracking-processing-requests {
+    display: flex;
+    gap: 50px;
+}
+
+.form-tracking-processing-requests h2 {
+    padding-top: 46px;
+    margin-bottom: 0;
+}
+
+.form-tracking-processing-requests-description {
+    display: flex;
+    gap: 80px;
+    padding: 60px;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 36px;
+}
+
+.form-tracking-processing-requests-description li {
+    margin-bottom: 20px;
+}
+
+.form-tracking-how-work {
+    display: flex;
+    gap: 40px;
+}
+
+.form-tracking-how-work h2 {
+    padding-top: 46px;
+}
+@media (max-width: 992px) {
+    .form-tracking-processing-requests-description {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        padding: 40px 20px;
+    }
+
+    .form-tracking-how-work {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 0;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .form-tracking-processing-requests {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .form-tracking-processing-requests h2,
+    .form-tracking-how-work h2 {
+        padding-top: 0;
+    }
+}

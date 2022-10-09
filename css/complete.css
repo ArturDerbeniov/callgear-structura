@@ -7,11 +7,13 @@
 @import 'vpbx.css';
 @import 'virtual-mnumbers.css';
 @import 'call-scenarios.css';
+@import 'call-tracking.css';
 @import 'inbound-notifications.css';
 @import 'analytics-reports.css';
 @import 'virtual-mnumbers.css';
 @import 'integrations.css';
 @import 'api.css';
+@import 'form-tracking.css';
 @import 'web-form-auto-callback.css';
 @import 'callback-missed.css';
 @import 'callback-widget.css';

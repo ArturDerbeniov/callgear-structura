@@ -8,7 +8,6 @@ gsap.to(triggerNameStr1, {
 		duration:0.7, 
 		scaleX:0.95, scaleY:0.95, rotationX:0, rotationY:0, rotationZ:0, x:-250, y:150, z:0, skewX:0, skewY:0,
 		scrollTrigger: {
-			markers: true,
 			trigger: triggerNameStr1,
 			toggleActions: "play none none reverse",
 			toggleClass: "active",
@@ -25,7 +24,6 @@ gsap.to(triggerNameStr2, {
 		duration:0.7, 
 		scaleX:0.95, scaleY:0.95, rotationX:0, rotationY:0, rotationZ:0, x:-250, y:150, z:0, skewX:0, skewY:0,
 		scrollTrigger: {
-			markers: true,
 			trigger: triggerNameStr2,
 			toggleActions: "play none none reverse",
 			toggleClass: "active",

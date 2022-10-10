@@ -323,7 +323,7 @@ ul {
 .headerPage-mainPage__animImgs img {
   position: absolute;
   transform-origin: top center;
-  box-shadow: 0px 8px 40px rgba(0, 0, 0, 0.1);
+  filter: drop-shadow(0px 8px 40px rgba(0, 0, 0, 0.1));
 }
 .headerPage-mainPage__animImgs__img1 {
   left: 190px;
@@ -753,7 +753,7 @@ ul {
   text-align: center;
 }
 
-.cardsList {
+.cardList {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;

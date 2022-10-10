@@ -3,42 +3,45 @@ document.addEventListener("click", eventDocClick, false);
 gsap.registerPlugin(ScrollTrigger);
 
 
-let triggerNameStr1 = ".headerPage-mainPage__animImgs.animationType1";
-gsap.to(triggerNameStr1, {
-		duration:0.7, 
-		scaleX:0.95, scaleY:0.95, rotationX:0, rotationY:0, rotationZ:0, x:-250, y:150, z:0, skewX:0, skewY:0,
-		scrollTrigger: {
-			trigger: triggerNameStr1,
-			toggleActions: "play none none reverse",
-			toggleClass: "active",
-			start: "top 70px",
-			end: "bottom top",
-			id: "anim1",
-		}
-	}
-);
-
-let triggerNameStr2 = ".headerPage-mainPage__animImgs.animationType2",
-	animImgsHeader = document.querySelectorAll(triggerNameStr2 + " img");
-gsap.to(triggerNameStr2, {
-		duration:0.7, 
-		scaleX:0.95, scaleY:0.95, rotationX:0, rotationY:0, rotationZ:0, x:-250, y:150, z:0, skewX:0, skewY:0,
-		scrollTrigger: {
-			trigger: triggerNameStr2,
-			toggleActions: "play none none reverse",
-			toggleClass: "active",
-			start: "top 70px",
-			end: "bottom top",
-			id: "anim2",
-			onEnter: () => {
-				gsap.to(animImgsHeader, {scale:1.15, stagger: 0.06, duration:0.6, ease:"circ.out"}, "<+=.6");
-			},
-			onLeaveBack: () => {
-				gsap.to(animImgsHeader, {scale:1, stagger: 0.06, duration:0.6, ease:"circ.out"}, "<+=.6");
+if(document.querySelector(".headerPage-mainPage__animImgs")) {
+	
+	let triggerNameStr1 = ".headerPage-mainPage__animImgs.animationType1";
+	gsap.to(triggerNameStr1, {
+			duration:0.7, 
+			scaleX:0.95, scaleY:0.95, rotationX:0, rotationY:0, rotationZ:0, x:-250, y:150, z:0, skewX:0, skewY:0,
+			scrollTrigger: {
+				trigger: triggerNameStr1,
+				toggleActions: "play none none reverse",
+				toggleClass: "active",
+				start: "top 70px",
+				end: "bottom top",
+				id: "anim1",
 			}
 		}
-	}
-);
+	);
+
+	let triggerNameStr2 = ".headerPage-mainPage__animImgs.animationType2",
+		animImgsHeader = document.querySelectorAll(triggerNameStr2 + " img");
+	gsap.to(triggerNameStr2, {
+			duration:0.7, 
+			scaleX:0.95, scaleY:0.95, rotationX:0, rotationY:0, rotationZ:0, x:-250, y:150, z:0, skewX:0, skewY:0,
+			scrollTrigger: {
+				trigger: triggerNameStr2,
+				toggleActions: "play none none reverse",
+				toggleClass: "active",
+				start: "top 70px",
+				end: "bottom top",
+				id: "anim2",
+				onEnter: () => {
+					gsap.to(animImgsHeader, {scale:1.15, stagger: 0.06, duration:0.6, ease:"circ.out"}, "<+=.6");
+				},
+				onLeaveBack: () => {
+					gsap.to(animImgsHeader, {scale:1, stagger: 0.06, duration:0.6, ease:"circ.out"}, "<+=.6");
+				}
+			}
+		}
+	);
+}
 /*let tl = gsap.timeline({
 	// duration:1.5, ease: "power2.out",
 	// scaleX:0.95, scaleY:0.95, rotationX:0, rotationY:0, rotationZ:0, x:-250, y:150, z:0, skewX:0, skewY:0,

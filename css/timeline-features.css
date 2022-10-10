@@ -90,6 +90,10 @@
         margin-top: 0;
         gap: 20px;
     }
+    
+    .timeline-features-item img {
+        max-width: 100%;
+    }    
 
     .timeline-features-item .description {
         display: flex;

@@ -1106,7 +1106,7 @@ ul {
     height: 685px;
     position: relative;
     perspective: 500px;
-    transform: scale(0.79) rotateY(-10deg) rotateZ(30deg) translateX(108px) translateY(22px) translateZ(5px) skewX(-6deg) skewY(0deg);
+    transform: scale(0.79) rotateY(-10deg) rotateZ(30deg) translateX(-108px) translateY(22px) translateZ(5px) skewX(-6deg) skewY(0deg);
   }
   .headerPage-mainPage__animImgs.active .headerPage-mainPage__animImgs__img5 {
     left: 53px;

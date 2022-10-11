@@ -7,11 +7,23 @@ gsap.registerPlugin(ScrollTrigger);
 if(window.innerWidth >= 992) {
 
 	if(document.querySelector(".headerPage-mainPage__animImgs")) {
+		let scaleVal = 0.8,
+			xVal = -250,
+			yVal = 150;
 
-		let triggerNameStr1 = ".headerPage-mainPage__animImgs.animationType1";
+		if(document.documentElement.getAttribute('lang') == 'ar') {
+			xVal = 250;
+		}
+
+
+		if(window.innerWidth >= 1200) {
+			scaleVal = 0.95;
+		}
+
+/*		let triggerNameStr1 = ".headerPage-mainPage__animImgs.animationType1";
 		gsap.to(triggerNameStr1, {
 				duration:0.7, 
-				scaleX:0.95, scaleY:0.95, rotationX:0, rotationY:0, rotationZ:0, x:-250, y:150, z:0, skewX:0, skewY:0,
+				scaleX:scaleVal, scaleY:scaleVal, rotationX:0, rotationY:0, rotationZ:0, x:xVal, y:yVal, z:0, skewX:0, skewY:0,
 				scrollTrigger: {
 					trigger: triggerNameStr1,
 					toggleActions: "play none none reverse",
@@ -21,13 +33,13 @@ if(window.innerWidth >= 992) {
 					id: "anim1",
 				}
 			}
-		);
+		);*/
 
-		let triggerNameStr2 = ".headerPage-mainPage__animImgs.animationType2",
+		let triggerNameStr2 = ".headerPage-mainPage__animImgs",
 			animImgsHeader = document.querySelectorAll(triggerNameStr2 + " img");
 		gsap.to(triggerNameStr2, {
 				duration:0.7, 
-				scaleX:0.95, scaleY:0.95, rotationX:0, rotationY:0, rotationZ:0, x:-250, y:150, z:0, skewX:0, skewY:0,
+				scaleX:scaleVal, scaleY:scaleVal, rotationX:0, rotationY:0, rotationZ:0, x:xVal, y:yVal, z:0, skewX:0, skewY:0,
 				scrollTrigger: {
 					trigger: triggerNameStr2,
 					toggleActions: "play none none reverse",
@@ -75,10 +87,10 @@ if(window.innerWidth >= 992) {
 	  start: "top top",
 	  end: "bottom bottom",
 	  onUpdate: getCurrentSection,
-	  pin: ".asidePics"
+	  pin: ".asidePics",
 	});
 
-	const contentMarkers = gsap.utils.toArray(".asideText-title");
+	const contentMarkers = gsap.utils.toArray(".asideText-oneCont");
 
 	contentMarkers.forEach(marker => {
 	  marker.content = document.querySelector(`#${marker.dataset.markerContent}`);
@@ -87,7 +99,7 @@ if(window.innerWidth >= 992) {
 	    gsap.set(marker.content, {transformOrigin: "center"});
 	    
 	    marker.content.enter = function() {
-	      gsap.fromTo(marker.content, {autoAlpha: 0, rotateY: 0}, {duration: 0, autoAlpha: 1, rotateY: 0});
+			gsap.fromTo(marker.content, {autoAlpha: 0, rotateY: 0}, {duration: 0, autoAlpha: 1, rotateY: 0});
 	    }
 	  } 
 	  
@@ -103,7 +115,7 @@ if(window.innerWidth >= 992) {
 	  const currScroll = scrollY;
 	  
 	  contentMarkers.forEach(marker => {
-	    if(currScroll > marker.offsetTop) {
+	    if(currScroll > (marker.offsetTop - (marker.content.offsetHeight / 2))) {
 	      newContent = marker.content;
 	    }
 	  });
@@ -138,76 +150,85 @@ if(window.innerWidth >= 992) {
 //=============================================//
 (function() {
 
-if(!document.querySelector(".sectionOnMain-btnsRainbow")) return;
+	if(!document.querySelector(".sectionOnMain-btnsRainbow")) return;
 
-const ST = ScrollTrigger.create({
-  trigger: ".sectionOnMain-btnsRainbow",
-  start: "top top",
-  end: "bottom bottom",
-  onUpdate: getCurrentSection,
-  pin: ".btnsRainbow-btnsCol-inner"
-});
+	const ST = ScrollTrigger.create({
+	  trigger: ".sectionOnMain-btnsRainbow",
+	  start: "top top",
+	  end: "bottom bottom",
+	  onUpdate: getCurrentSection,
+	  pin: ".btnsRainbow-btnsCol-inner"
+	});
 
-const contentMarkers = gsap.utils.toArray(".btnsRainbow-title");
+	const contentMarkers = gsap.utils.toArray(".btnsRainbow-title");
 
-contentMarkers.forEach(marker => {
-  marker.content = document.querySelector(`#${marker.dataset.markerContent}`);
-  
-  if(marker.content.tagName === "SPAN") {
-    
-    marker.content.enter = function() {
-      marker.content.classList.add("active");
-      document.querySelectorAll("." + marker.content.id).forEach(btn => {
-      	btn.classList.add("active");
-      	btn.classList.remove("disabled");
-      });
-    }
-  } 
-  
-  marker.content.leave = function() {
-    marker.content.classList.remove("active");
-    document.querySelectorAll("." + marker.content.id).forEach(btn => {
-      	btn.classList.remove("active");
-      	btn.classList.add("disabled");
-      });
-  }
-  
-});
+	contentMarkers.forEach(marker => {
+	  marker.content = document.querySelector(`#${marker.dataset.markerContent}`);
+	  
+	  if(marker.content.tagName === "SPAN") {
+	    
+	    marker.content.enter = function() {
+	      marker.content.classList.add("active");
+	      document.querySelectorAll("." + marker.content.id).forEach(btn => {
+	      	btn.classList.add("active");
+	      	btn.classList.remove("disabled");
+	      });
+	    }
+	  } 
+	  
+	  marker.content.leave = function() {
+	    marker.content.classList.remove("active");
+	    document.querySelectorAll("." + marker.content.id).forEach(btn => {
+	      	btn.classList.remove("active");
+	      	btn.classList.add("disabled");
+	      });
+	  }
+	  
+	});
 
-let lastContent;
-function getCurrentSection() {
-  let newContent;
-  const currScroll = scrollY;
-  
-  contentMarkers.forEach(marker => {
-    if(currScroll > marker.offsetTop) {
-      newContent = marker.content;
-    }
-  });
-  
-  if(newContent && 
-  	(lastContent == null || !newContent.isSameNode(lastContent))) {
-    if(lastContent) {
-      lastContent.leave();
-    }
-    
-    newContent.enter();
-    
-    lastContent = newContent;
-  }
-}
+	let lastContent;;
+	function getCurrentSection() {
+		let newContent, shiftVertical;
 
-const media = window.matchMedia("screen and (max-width: 992px)");
-ScrollTrigger.addEventListener("refreshInit", checkSTState);
-checkSTState();
+		const currScroll = scrollY;
 
-function checkSTState() {
-  if(media.matches) {
-    ST.disable();
-  } else {
-    ST.enable();
-  }
-}
+		contentMarkers.forEach(marker => {
+			shiftVertical = 0;
+			if(marker.getAttribute('data-marker-content') == "btns-1") {
+				shiftVertical = 130;
+			}
+			else if(marker.getAttribute('data-marker-content') == "btns-3") {
+				shiftVertical = -130;
+			}
+			if(currScroll > (marker.offsetTop + shiftVertical)) {
+				newContent = marker.content;
+			}
+		});
+
+		if(newContent && 
+			(lastContent == null || !newContent.isSameNode(lastContent))) {
+
+			if(lastContent) {
+				lastContent.leave();
+			}
+
+			newContent.enter();
+
+			lastContent = newContent;
+		}
+	}
+
+	const media = window.matchMedia("screen and (max-width: 992px)");
+	ScrollTrigger.addEventListener("refreshInit", checkSTState);
+	checkSTState();
+
+	function checkSTState() {
+	  if(media.matches) {
+	    ST.disable();
+	  } else {
+	    ST.enable();
+	  }
+	}
 })();
 
 //=============================================//

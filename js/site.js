@@ -4,7 +4,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 if(document.querySelector(".headerPage-mainPage__animImgs")) {
-	
+
 	let triggerNameStr1 = ".headerPage-mainPage__animImgs.animationType1";
 	gsap.to(triggerNameStr1, {
 			duration:0.7, 
@@ -33,7 +33,7 @@ if(document.querySelector(".headerPage-mainPage__animImgs")) {
 				end: "bottom top",
 				id: "anim2",
 				onEnter: () => {
-					gsap.to(animImgsHeader, {scale:1.15, stagger: 0.06, duration:0.6, ease:"circ.out"}, "<+=.6");
+					gsap.to(animImgsHeader, {scaleX:1.055, scaleY:1.08, stagger: 0.06, duration:0.6, ease:"circ.out"}, "<+=.6");
 				},
 				onLeaveBack: () => {
 					gsap.to(animImgsHeader, {scale:1, stagger: 0.06, duration:0.6, ease:"circ.out"}, "<+=.6");

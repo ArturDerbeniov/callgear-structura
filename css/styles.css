@@ -192,6 +192,23 @@ ul {
   text-shadow: none;
   border: 1px solid transparent;
   color: #000 !important;
+  border-radius: 24px;
+  min-height: 36px;
+  box-sizing: content-box;
+}
+.btn-bordRainbow:hover {
+  border: 0;
+  margin: 1px;
+}
+.btn-bordRainbow.disabled {
+  pointer-events: all;
+  background: transparent;
+}
+.btn-bordRainbow.disabled:hover {
+  border-color: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.2);
+  color: #fff !important;
+  cursor: pointer;
 }
 .btn-bordRainbow.btns-1, .btn-bordRainbow.btns-1:not(.disabled) {
   background: linear-gradient(#fff, #fff) padding-box, linear-gradient(90deg, #5D6AE8 0%, #F38478 100%) border-box;
@@ -818,6 +835,9 @@ ul {
 .cardCite__txt {
   margin: 40px 0 20px;
 }
+.cardCite__logo img {
+  opacity: 0.5;
+}
 
 .cardStyle2 {
   height: 100%;
@@ -1046,9 +1066,10 @@ ul {
   .sectionOnMain-pros .asideText {
     display: block;
     padding-bottom: 50%;
+    max-width: 350px;
   }
   .sectionOnMain-pros .asideText-title {
-    padding-top: 50vh;
+    padding-top: 40vh;
   }
   .sectionOnMain-pros .asidePics {
     position: relative;
@@ -1058,11 +1079,11 @@ ul {
   .sectionOnMain-pros .asidePics img {
     position: absolute;
     top: 50%;
-    transform: translate3d(-180px, -180px, 0);
+    transform: translate3d(-330px, -330px, 0);
     left: 50%;
     opacity: 0;
-    width: 360px;
-    height: 360px;
+    width: 660px;
+    height: auto;
   }
   .sectionOnMain-btnsRainbow {
     padding-top: 0;
@@ -1095,7 +1116,7 @@ ul {
     text-align: right;
   }
   .headerPage-mainPage {
-    padding-bottom: 100px;
+    padding-bottom: 150px;
   }
   .headerPage-mainPage .headerPage__imgCol {
     perspective: 580px;

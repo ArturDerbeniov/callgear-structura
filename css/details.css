@@ -40,6 +40,7 @@ details summary::-webkit-details-marker {
 }
 
 details summary {
+    width: calc(100% - 30px);
     padding: 40px;
     cursor: pointer;
     font-size: 16px;

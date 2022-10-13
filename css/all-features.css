@@ -1,0 +1,39 @@
+.all-features-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.all-features-item {
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 36px;
+    font-size: 16px;
+    line-height: 24px;
+    text-decoration: none;
+    color: black;
+}
+
+.all-features-item:hover {
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    color: black;
+}
+
+.all-features-item img {
+    margin-bottom: 20px;
+}
+
+.all-features-item-title {
+    margin-bottom: 8px;
+}
+
+@media (max-width: 767.98px) {
+    .all-features-item {
+        width: 100%;
+    }
+}

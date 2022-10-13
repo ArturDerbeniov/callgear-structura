@@ -20,21 +20,6 @@ if(window.innerWidth >= 992) {
 			scaleVal = 0.95;
 		}
 
-/*		let triggerNameStr1 = ".headerPage-mainPage__animImgs.animationType1";
-		gsap.to(triggerNameStr1, {
-				duration:0.7, 
-				scaleX:scaleVal, scaleY:scaleVal, rotationX:0, rotationY:0, rotationZ:0, x:xVal, y:yVal, z:0, skewX:0, skewY:0,
-				scrollTrigger: {
-					trigger: triggerNameStr1,
-					toggleActions: "play none none reverse",
-					toggleClass: "active",
-					start: "top 70px",
-					end: "bottom top",
-					id: "anim1",
-				}
-			}
-		);*/
-
 		let triggerNameStr2 = ".headerPage-mainPage__animImgs",
 			animImgsHeader = document.querySelectorAll(triggerNameStr2 + " img");
 		gsap.to(triggerNameStr2, {
@@ -57,23 +42,7 @@ if(window.innerWidth >= 992) {
 			}
 		);
 	}
-	/*let tl = gsap.timeline({
-		// duration:1.5, ease: "power2.out",
-		// scaleX:0.95, scaleY:0.95, rotationX:0, rotationY:0, rotationZ:0, x:-250, y:150, z:0, skewX:0, skewY:0,
-		scrollTrigger: {
-			markers: true,
-			trigger: ".headerPage-mainPage__animImgs",
-			toggleActions: "play none reverse none",
-			start: "top 100px",
-			end: "bottom top",
-			toggleClass: "active"
-		}
-	});*/
-	/*tl.to(".headerPage-mainPage__animImgs", {
-		duration:1.5, ease: "power2.out",
-		scaleX:0.95, scaleY:0.95, rotationX:0, rotationY:0, rotationZ:0, x:-250, y:150, z:0, skewX:0, skewY:0,
-	});*/
-	// tl.fromTo(".headerPage-mainPage__animImgs img", {rotation:+10}, {rotation:-10}, "<+=.5");
+	
 }
 //=============================================//
 ///////////////// pined pics ////////////////////
@@ -235,7 +204,7 @@ if(window.innerWidth >= 992) {
 ///////////////// pined btns end ////////////////
 //=============================================//
 
-AOS.init();
+// AOS.init();
 
 function eventDocClick(e) {
     var targ = e.target;
@@ -261,12 +230,6 @@ $(document).ready(function() {
 	    	allowClear: true,
 	    	width: '100%'
 	    })
-	 //    .on("select2:closing", function(e) {
-		//     e.preventDefault();
-		// }).on("select2:closed", function(e) {
-		//     list.select2("open");
-		// });
-		list.select2("open");
 	}
 });
 
@@ -298,8 +261,11 @@ function initAudioPlayer(numPlayer) {
 }
 
 var videoYT = {
+	_idVideo: undefined,
 	init: function(sender, idVideo) {
 		document.getElementById("video").innerHTML = "<div id='player' data-idvideo='" + idVideo + "'></div>";
+
+		this._setVideoId(idVideo);
 
 	    var tag = document.createElement('script');
 	    tag.src = "https://www.youtube.com/iframe_api";
@@ -310,14 +276,19 @@ var videoYT = {
 	},
 	onPlayerReady: function(e) {
 		// e.target.playVideo();
-	}
-	
+	},
+	_setVideoId: function(id) {
+		this._idVideo = id;
+	},
+	getVideoId: function() {
+		return this._idVideo;
+	}	
 } 							
 function onYouTubeIframeAPIReady() {
     new YT.Player('player', {
         height: '390',
         width: '640',
-        videoId: 'tYQJeKZCB7w',
+        videoId: videoYT.getVideoId(),
         playerVars: { 'rel': 0, 'showinfo':0, 'controls': 1, 'fs':0 , 'autoplay':1, '	origin':'https%3A%2F%2Fcallgear.ae'},
         /*events: {
             'onReady': window.videoYT.onPlayerReady

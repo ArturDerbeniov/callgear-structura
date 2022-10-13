@@ -131,7 +131,7 @@ ul {
   margin-right: 0 !important;
 }
 .rtl-no .textIcon__ico {
-  transform: none;
+  transform: none !important;
 }
 .rtl-yes {
   direction: rtl;

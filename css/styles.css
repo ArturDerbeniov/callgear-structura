@@ -130,6 +130,9 @@ ul {
   transform: none !important;
   margin-right: 0 !important;
 }
+.rtl-no .textIcon__ico {
+  transform: none;
+}
 .rtl-yes {
   direction: rtl;
 }

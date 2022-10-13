@@ -30,10 +30,16 @@ html[lang=ar] .voiceGreetExample__titleTrack {
   margin-left: 0;
   margin-right: 30px;
 }
+.ae .lnk-getMore svg,
 .ae .all-link svg,
+html[lang=ar] .lnk-getMore svg,
 html[lang=ar] .all-link svg {
   margin-right: 8px;
   transform: rotate(180deg);
+}
+.ae .lnk-getMore,
+html[lang=ar] .lnk-getMore {
+  margin-right: 40px;
 }
 .ae .textBlockGradient__text,
 html[lang=ar] .textBlockGradient__text {
@@ -194,6 +200,9 @@ ul {
   border: 0;
   margin: 1px;
 }
+.btn-bordRainbow.active {
+  background-color: #F5F5F5;
+}
 .btn-bordRainbow.disabled {
   pointer-events: all;
 }
@@ -204,13 +213,13 @@ ul {
   cursor: pointer;
 }
 .btn-bordRainbow.btns-1, .btn-bordRainbow.btns-1:not(.disabled) {
-  background: linear-gradient(#fff, #fff) padding-box, linear-gradient(90deg, #5D6AE8 0%, #F38478 100%) border-box;
+  background: linear-gradient(#F5F5F5, #F5F5F5) padding-box, linear-gradient(90deg, #5D6AE8 0%, #F38478 100%) border-box;
 }
 .btn-bordRainbow.btns-2, .btn-bordRainbow.btns-2:not(.disabled) {
-  background: linear-gradient(#fff, #fff) padding-box, linear-gradient(270deg, #E60050 0%, #5D6AE8 100%) border-box;
+  background: linear-gradient(#F5F5F5, #F5F5F5) padding-box, linear-gradient(270deg, #E60050 0%, #5D6AE8 100%) border-box;
 }
 .btn-bordRainbow.btns-3, .btn-bordRainbow.btns-3:not(.disabled) {
-  background: linear-gradient(#fff, #fff) padding-box, linear-gradient(90deg, #5D6AE8 0%, #00D2FE 100%) border-box;
+  background: linear-gradient(#F5F5F5, #F5F5F5) padding-box, linear-gradient(90deg, #5D6AE8 0%, #00D2FE 100%) border-box;
 }
 .btn-bordRainbow:not(.disabled):hover {
   color: #fff !important;
@@ -1023,6 +1032,11 @@ ul {
   left: 0;
   right: 0;
   padding: 0 21px;
+}
+.lnk-getMore {
+  margin-left: 40px;
+  margin-top: 50px;
+  display: inline-block;
 }
 
 .mb-20px {

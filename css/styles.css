@@ -1193,7 +1193,7 @@ ul {
     border-width: 1px;
     background: transparent !important;
   }
-  html[lang=ru] .headerPage__cntCol {
+  html[lang=en] .headerPage__cntCol, html[lang=ru] .headerPage__cntCol, html[lang=lv] .headerPage__cntCol {
     padding-right: 0 !important;
   }
   .headerPage__imgCol {

@@ -21,6 +21,7 @@ if(window.innerWidth >= 992) {
 		}
 
 		let triggerNameStr2 = ".headerPage-mainPage__animImgs",
+			headerPageImgCol = document.querySelector(".headerPage__imgCol");
 			animImgsHeader = document.querySelectorAll(triggerNameStr2 + " img");
 		gsap.to(triggerNameStr2, {
 				duration:0.7, 
@@ -34,9 +35,11 @@ if(window.innerWidth >= 992) {
 					id: "anim2",
 					onEnter: () => {
 						gsap.to(animImgsHeader, {scaleX:1.055, scaleY:1.08, stagger: 0.06, duration:0.6, ease:"circ.out"}, "<+=.6");
+						gsap.to(headerPageImgCol, {perspective: 900, perspectiveOrigin:"0% 0%", duration:0.6, ease:"circ.out"});
 					},
 					onLeaveBack: () => {
 						gsap.to(animImgsHeader, {scale:1, stagger: 0.06, duration:0.6, ease:"circ.out"}, "<+=.6");
+						gsap.to(headerPageImgCol, {perspective: 580, perspectiveOrigin:"-128% 121%", duration:0.6, ease:"circ.out"});
 					}
 				}
 			}

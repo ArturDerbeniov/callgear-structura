@@ -527,6 +527,7 @@ ul {
   line-height: inherit;
   margin: 0;
   letter-spacing: -0.03em;
+  display: inline-block;
 }
 .textBlockGradient__text__small {
   font-size: 32px;
@@ -1424,13 +1425,19 @@ ul {
   .imgAllWidthAside-colPic-left .imgAllWidthAside-picture img {
     margin-left: 7%;
   }
+  .imgAllWidthAside-colPic-right {
+    text-align: left;
+  }
   .imgAllWidthAside-colPic-right .imgAllWidthAside-picture img {
     margin-left: -7%;
   }
+  .imgAllWidthAside-colPic-left {
+    text-align: right;
+  }
   .imgAllWidthAside-picture {
     display: block;
-    width: 100vw;
-    min-width: 100vw;
+    width: 90vw;
+    min-width: 90vw;
   }
   .imgAllWidthAside-picture img {
     margin-top: -7%;

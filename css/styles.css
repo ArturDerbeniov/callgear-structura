@@ -759,6 +759,9 @@ ul {
   margin-left: 20px;
   margin-right: 20px;
 }
+.blImgAsideText_valignTop {
+  align-items: flex-start !important;
+}
 .cardList {
   display: flex;
   flex-wrap: wrap;
@@ -1422,14 +1425,8 @@ ul {
     order: 0;
     justify-content: flex-end;
   }
-  .imgAllWidthAside-colPic-left .imgAllWidthAside-picture img {
-    margin-left: 7%;
-  }
   .imgAllWidthAside-colPic-right {
     text-align: left;
-  }
-  .imgAllWidthAside-colPic-right .imgAllWidthAside-picture img {
-    margin-left: -7%;
   }
   .imgAllWidthAside-colPic-left {
     text-align: right;
@@ -1465,11 +1462,17 @@ ul {
     margin-left: 0 !important;
     margin-right: 3em !important;
   }
-  html[lang=ar] .imgAllWidthAside-colPic-left .imgAllWidthAside-picture img {
-    margin-right: 7%;
+  html[lang=ar] .imgAllWidthAside-colPic-left {
+    text-align: left;
   }
-  html[lang=ar] .imgAllWidthAside-colPic-right .imgAllWidthAside-picture img {
-    margin-right: -25%;
+  html[lang=ar] .imgAllWidthAside-colPic-right {
+    text-align: right;
+  }
+  html[lang=ar] .rtl-no .imgAllWidthAside-colPic-left {
+    text-align: right;
+  }
+  html[lang=ar] .rtl-no .imgAllWidthAside-colPic-right {
+    text-align: left;
   }
   .video__container {
     border-radius: 47px;

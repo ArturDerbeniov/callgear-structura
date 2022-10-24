@@ -161,7 +161,8 @@
   }
 
   .features_item:nth-child(-n+4) {
-      grid-row: auto;
+      grid-row: auto !important;
+      grid-column: auto !important;
   }
 
   .features_item:nth-child(3) {

@@ -447,9 +447,27 @@ var initSlick = {
 		}
 	},
 	_setBackup: function() {
-		let tabPanes = $(".tab-content-slick").get(0).querySelectorAll(".tab-pane");
-		tabPanes.forEach((pane) => {
-			pane.setAttribute("data-id", pane.id);
+		let slicks = document.querySelectorAll(".tab-content-slick");
+		let tabNavs = document.querySelectorAll(".tab-nav");
+		slicks.forEach((slick) => {
+			let tabPanes = slick.querySelectorAll(".tab-pane");
+			tabPanes.forEach((pane) => {
+				pane.setAttribute("data-id", pane.id);
+			});
+		});
+
+		tabNavs.forEach((nav) => {
+			let tabs = nav.querySelectorAll(".tab-btn");
+			tabs.forEach((tab, i) => {
+				if(!i) {
+					tab.classList.add("active");
+					tab.setAttribute("aria-selected", "true");
+				}
+				else {
+					tab.classList.remove("active");
+					tab.setAttribute("aria-selected", "false");
+				}
+			})
 		});
 	},
 	_setPositionActiveTab: function(tabList, activeTab) {

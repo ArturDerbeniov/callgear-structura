@@ -287,10 +287,13 @@ ul {
 .tab-btn.active {
   pointer-events: none;
 }
-.tab-content {
+.tab-content-text {
   background: rgba(255, 255, 255, 0.5);
   box-shadow: 0px 8px 40px rgba(0, 0, 0, 0.1);
   border-radius: 36px;
+  padding: 0;
+}
+.tab-content-inner {
   padding: 40px 20px;
 }
 .tab-content p, .tab-content ul {

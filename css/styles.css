@@ -30,8 +30,10 @@ html[lang=ar] .voiceGreetExample__titleTrack {
   margin-left: 0;
   margin-right: 30px;
 }
+.ae .lnk-start img,
 .ae .lnk-getMore svg,
 .ae .all-link svg,
+html[lang=ar] .lnk-start img,
 html[lang=ar] .lnk-getMore svg,
 html[lang=ar] .all-link svg {
   margin-right: 8px;
@@ -210,10 +212,7 @@ ul {
   pointer-events: all;
 }
 .btn-bordRainbow.disabled:hover {
-  border-color: rgba(0, 0, 0, 0.2);
-  background: rgba(0, 0, 0, 0.2) !important;
   color: #fff !important;
-  cursor: pointer;
 }
 .btn-bordRainbow.btns-1, .btn-bordRainbow.btns-1:not(.disabled) {
   background: linear-gradient(#F5F5F5, #F5F5F5) padding-box, linear-gradient(90deg, #5D6AE8 0%, #F38478 100%) border-box;
@@ -227,6 +226,15 @@ ul {
 .btn-bordRainbow:not(.disabled):hover {
   color: #fff !important;
 }
+.btn-bordRainbow.btns-1:hover {
+  background: linear-gradient(90deg, #5D6AE8 0%, #F38478 100%) !important;
+}
+.btn-bordRainbow.btns-2:hover {
+  background: linear-gradient(270deg, #E60050 0%, #5D6AE8 100%) !important;
+}
+.btn-bordRainbow.btns-3:hover {
+  background: linear-gradient(90deg, #5D6AE8 0%, #00D2FE 100%) !important;
+}
 .btn-bordRainbow.btns-1:not(.disabled):hover {
   background: linear-gradient(90deg, #5D6AE8 0%, #F38478 100%) !important;
 }
@@ -235,6 +243,23 @@ ul {
 }
 .btn-bordRainbow.btns-3:not(.disabled):hover {
   background: linear-gradient(90deg, #5D6AE8 0%, #00D2FE 100%) !important;
+}
+.buttonsDisabledHover .btn-bordRainbow.btns-1:hover {
+  background: linear-gradient(90deg, #5D6AE8 0%, #F38478 100%) !important;
+}
+.buttonsDisabledHover .btn-bordRainbow.btns-2:hover {
+  background: linear-gradient(270deg, #E60050 0%, #5D6AE8 100%) !important;
+}
+.buttonsDisabledHover .btn-bordRainbow.btns-3:hover {
+  background: linear-gradient(90deg, #5D6AE8 0%, #00D2FE 100%) !important;
+}
+@media (min-width: 992px) {
+  .btn-bordRainbow.disabled:hover {
+    border-color: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.2) !important;
+    color: #fff !important;
+    cursor: pointer;
+  }
 }
 
 .tab-btn {
@@ -294,6 +319,9 @@ ul {
   margin-right: -20px;
   flex-wrap: nowrap;
   overflow: auto;
+}
+.tab-nav .tab-btn {
+  box-shadow: none;
 }
 .tab-nav-wrap {
   width: calc(100vw - 40px);
@@ -1176,9 +1204,9 @@ ul {
     padding-bottom: 0%;
   }
   .sectionOnMain-btnsRainbow .btnsRainbow-titleCol-inner .btnsRainbow-title {
+    margin-bottom: 0;
     margin-left: 50px;
-    padding-top: 50vh;
-    padding-bottom: 25vh;
+    padding: 45vh 0;
   }
   .sectionOnMain-btnsRainbow .btnsRainbow-btnsCol-inner {
     position: relative;
@@ -1219,7 +1247,7 @@ ul {
     transform: scale(0.79) rotateY(-10deg) rotateZ(30deg) translateX(-108px) translateY(22px) translateZ(5px) skewX(-6deg) skewY(0deg);
   }
   .headerPage-mainPage__animImgs.active .headerPage-mainPage__animImgs__img5 {
-    left: 53px;
+    left: 50px;
     transition-delay: 0.75s;
   }
   .headerPage-mainPage__animImgs img {
@@ -1551,6 +1579,56 @@ ul {
   }
   .sectionOnMain-cardsRow {
     margin-right: -20px;
+  }
+  .tab-content-slick .tab-content-imgAllWScaled {
+    width: auto;
+    transform: scale(1);
+    display: block;
+    max-width: 100%;
+  }
+  .tab-content-slick .slick-list {
+    max-width: calc(100vw - 40px);
+  }
+  .tab-content-slick .slick-slide {
+    opacity: 1 !important;
+  }
+  .tab-content-slick .slick-dots {
+    list-style: none;
+    text-align: center;
+  }
+  .tab-content-slick .slick-dots li:focus-visible,
+.tab-content-slick .slick-dots button:focus-visible {
+    outline: none;
+  }
+  .tab-content-slick .slick-dots li {
+    height: 40px;
+    width: 40px;
+    display: inline-flex;
+    align-items: center;
+    margin: 2px;
+  }
+  .tab-content-slick .slick-dots li.slick-active button {
+    background-color: #FF0090;
+  }
+  .tab-content-slick .slick-dots button {
+    appearance: none;
+    font-size: 0;
+    color: transparent;
+    border-radius: 2px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.1);
+    height: 4px;
+    width: 100%;
+  }
+  .tab-content-slick:not(.tab-content-slick-showDots) .slick-dots {
+    display: none !important;
+  }
+  .tab-content-slick + .lnkStart-wrapper {
+    margin-top: 40px;
+    text-align: center;
+  }
+  .tab-content-slick .tab-content-imgCol {
+    margin-top: 15px;
   }
 }
 /* select2 customize */

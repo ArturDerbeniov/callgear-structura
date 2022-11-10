@@ -431,7 +431,7 @@ var initSlick = {
 
 		if(window.innerWidth <= 991) {
 
-			var isTabsGallery = document.getElementsByClassName("tab-content-slick")[0] ? 1 : 0;
+			var isTabsGallery = document.getElementsByClassName("tabsSlider")[0] ? 1 : 0;
 
 			if (
 					isTabsGallery
@@ -447,7 +447,7 @@ var initSlick = {
 		}
 	},
 	_setBackup: function() {
-		let slicks = document.querySelectorAll(".tab-content-slick");
+		let slicks = document.querySelectorAll(".tabsSlider .tab-content");
 		let tabNavs = document.querySelectorAll(".tab-nav");
 		slicks.forEach((slick) => {
 			let tabPanes = slick.querySelectorAll(".tab-pane");
@@ -499,10 +499,10 @@ var initSlick = {
 	},
 	startGallery: function() {
 		initSlick._setBackup();
-		$(".tab-content-slick").on("afterChange", function(event, slick, numSlide) {
+		$(".tabsSlider .tab-content").on("afterChange", function(event, slick, numSlide) {
 			_setActiveTab(slick.$slides, numSlide);
 		});
-		$(".tab-content-slick").slick(initSlick.slickParams_1);
+		$(".tabsSlider .tab-content").slick(initSlick.slickParams_1);
 
 		function _setActiveTab(sliders, numSlideActive) {
 			for(let i = sliders.length-1; i >= 0; i--) {

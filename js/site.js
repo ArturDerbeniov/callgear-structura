@@ -1,4 +1,7 @@
+document.addEventListener('DOMContentLoaded', DomLoaded, false);
+window.addEventListener("load", eventWindowLoad, false);
 document.addEventListener("click", eventDocClick, false);
+window.addEventListener("resize", function () { fnDelay(function () { eventWindowResize() }, 300) }, false);
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -128,34 +131,37 @@ if(window.innerWidth >= 992) {
 	  trigger: ".sectionOnMain-btnsRainbow",
 	  start: "top top",
 	  end: "bottom bottom",
-	  onUpdate: getCurrentSection,
-	  pin: ".btnsRainbow-btnsCol-inner"
+	  pin: ".btnsRainbow-btnsCol-inner",
+	  onUpdate: getCurrentSection
 	});
 
 	const contentMarkers = gsap.utils.toArray(".btnsRainbow-title");
 
 	contentMarkers.forEach(marker => {
-	  marker.content = document.querySelector(`#${marker.dataset.markerContent}`);
-	  
-	  if(marker.content.tagName === "SPAN") {
-	    
-	    marker.content.enter = function() {
-	      marker.content.classList.add("active");
-	      document.querySelectorAll("." + marker.content.id).forEach(btn => {
-	      	btn.classList.add("active");
-	      	btn.classList.remove("disabled");
-	      });
-	    }
-	  } 
-	  
-	  marker.content.leave = function() {
-	    marker.content.classList.remove("active");
-	    document.querySelectorAll("." + marker.content.id).forEach(btn => {
-	      	btn.classList.remove("active");
-	      	btn.classList.add("disabled");
-	      });
-	  }
-	  
+		marker.content = document.querySelector(`#${marker.dataset.markerContent}`);
+
+
+		const currScroll = scrollY;
+		if(marker.content.tagName === "SPAN") {
+
+			marker.content.enter = function() {
+				document.querySelector(".btnsRainbow-btnsCol-inner").classList.remove("buttonsDisabledHover");
+				marker.content.classList.add("active");
+				document.querySelectorAll("." + marker.content.id).forEach(btn => {
+					btn.classList.add("active");
+					btn.classList.remove("disabled");
+				});
+			}
+		} 
+
+		marker.content.leave = function() {
+			marker.content.classList.remove("active");
+			document.querySelectorAll("." + marker.content.id).forEach(btn => {
+				btn.classList.remove("active");
+				btn.classList.add("disabled");
+			});
+		}
+
 	});
 
 	let lastContent;;
@@ -167,7 +173,7 @@ if(window.innerWidth >= 992) {
 		contentMarkers.forEach(marker => {
 			shiftVertical = 0;
 			if(marker.getAttribute('data-marker-content') == "btns-1") {
-				shiftVertical = 130;
+				// shiftVertical = window.innerHeight / 3;
 			}
 			else if(marker.getAttribute('data-marker-content') == "btns-3") {
 				shiftVertical = -130;
@@ -195,20 +201,39 @@ if(window.innerWidth >= 992) {
 	checkSTState();
 
 	function checkSTState() {
-	  if(media.matches) {
-	    ST.disable();
-	  } else {
-	    ST.enable();
-	  }
+		if(media.matches) {
+			ST.disable();
+		} else {
+			ST.enable();
+		}
 	}
 })();
 
 //=============================================//
 ///////////////// pined btns end ////////////////
 //=============================================//
-
-// AOS.init();
-
+var fnDelay = function () {
+    var timer = 0;
+    return function (callback, ms) {
+        clearTimeout(timer);
+        timer = setTimeout(callback, ms);
+    };
+}();
+function eventWindowResize() {
+	initSlick.check();
+	if(window.innerWidth >= 992) {
+		let tabsPane = document.querySelectorAll(".tab-pane[data-id]");
+		if(tabsPane.length) {
+			tabsPane.forEach((pane) => {
+				pane.setAttribute("id", pane.getAttribute("data-id"));
+				pane.removeAttribute("data-id");
+			});
+		}
+	}
+}
+function eventWindowLoad() {
+	initSlick.check();
+}
 function eventDocClick(e) {
     var targ = e.target;
     var clickedEl = e.target;
@@ -218,23 +243,28 @@ function eventDocClick(e) {
     		initAudioPlayer(targ.getAttribute("data-numplayer"));
     		break;
     	}
+    	if(targ.classList.contains("tab-nav") && targ.getAttribute("role") == "tablist" && clickedEl.classList.contains("tab-btn")) {
+    		initSlick.setActiveSlideFromTab(targ, clickedEl);
+    	}
         targ = targ.parentNode;
     }
 }
-
-$(document).ready(function() {
-
+function DomLoaded() {
 	bgPage.init();
 
-	if(document.querySelector(".select2-wrap")) {		
+	if(document.querySelector(".btnsRainbow-btnsCol-inner")) {
+		document.querySelector(".btnsRainbow-btnsCol-inner").classList.add("buttonsDisabledHover");
+	}
+
+	/*if(document.querySelector(".select2-wrap")) {		
 	    var list = $('.callNotification').select2({
 	    	placeholder: "Event type",
 	    	closeOnSelect: false,
 	    	allowClear: true,
 	    	width: '100%'
 	    })
-	}
-});
+	}	*/
+}
 
 function initAudioPlayer(numPlayer) {
 	let idPlayer = "jquery_jplayer_" + numPlayer;
@@ -386,3 +416,128 @@ var bgPage = {
 	}
 
 }
+
+var loadJS = function(url, callback, locToInsert){
+    var scriptTag = document.createElement('script');
+    scriptTag.src = url;
+
+    scriptTag.onload = callback;
+    scriptTag.onreadystatechange = callback;
+
+    locToInsert.appendChild(scriptTag);
+};
+var initSlick = {
+	check: function() {
+
+		if(window.innerWidth <= 991) {
+
+			var isTabsGallery = document.getElementsByClassName("tab-content-slick")[0] ? 1 : 0;
+
+			if (
+					isTabsGallery
+				) 
+			{
+				if (typeof $.fn.slick == "undefined") {
+		        	loadJS("js/slick1.8.1.min.js", initSlick.startGallery, document.body);
+		        }
+		        else {
+		        	this.startGallery();		        	
+		        }
+			}		
+		}
+	},
+	_setBackup: function() {
+		let tabPanes = $(".tab-content-slick").get(0).querySelectorAll(".tab-pane");
+		tabPanes.forEach((pane) => {
+			pane.setAttribute("data-id", pane.id);
+		});
+	},
+	_setPositionActiveTab: function(tabList, activeTab) {
+		// обрез слева
+		if(activeTab.offsetLeft < tabList.scrollLeft) {
+			gsap.to(tabList, {
+				scrollLeft: () => {return ("-=" + parseInt(Math.round(tabList.scrollLeft - activeTab.offsetLeft), 10))}
+ 			});
+		}
+		// обрез справа
+		if(activeTab.offsetLeft + activeTab.offsetWidth > tabList.clientWidth + tabList.scrollLeft) {
+			gsap.to(tabList, {
+				scrollLeft: () => {return ("+=" + parseInt(Math.round((activeTab.offsetLeft + activeTab.offsetWidth) - (tabList.clientWidth + tabList.scrollLeft)), 10))}
+ 			});			
+		}
+		this._setClassForTabPane(tabList);
+	},
+	_setClassForTabPane: function(tabList) {
+		let tabsPaneContainer;
+		let id = tabList.querySelector(".tab-btn").getAttribute("data-bs-target").slice(1);
+		let firtTabPane = document.querySelector("[data-id='" + id + "']");
+		if(firtTabPane) {
+			tabsPaneContainer = firtTabPane.parentNode;
+			let activeTabPane = tabsPaneContainer.querySelector(".tab-pane.active");
+			activeTabPane.classList.remove("show");
+			activeTabPane.classList.remove("active");
+			tabsPaneContainer.querySelector(".slick-active").className += " show active";
+		}
+	},
+	startGallery: function() {
+		this._setBackup();
+		$(".tab-content-slick").on("afterChange", function(event, slick, numSlide) {
+			_setActiveTab(slick.$slides, numSlide);
+		});
+		$(".tab-content-slick").slick(initSlick.slickParams_1);
+
+		function _setActiveTab(sliders, numSlideActive) {
+			for(let i = sliders.length-1; i >= 0; i--) {
+				if(sliders[i].classList.contains("slick-active")) {
+					let tabList = document.querySelector("[data-bs-target='#" + sliders[i].dataset.id + "']").parentNode;
+					tabList.getElementsByClassName("btn")[numSlideActive].click();
+					window.initSlick._setPositionActiveTab(tabList, tabList.getElementsByClassName("btn")[numSlideActive]);
+					break;
+				}
+			}
+		}
+	},	
+	setActiveSlideFromTab: function(tabList, activeTab) {
+		let idSlideToFind = activeTab.dataset.bsTarget.slice(1);
+
+		if(! document.querySelector("[data-id='" + idSlideToFind + "']")) return;
+
+		let ariaControlSlide = document.querySelector("[data-id='" + idSlideToFind + "']").id;
+		let activeSlickDot = document.querySelector("[aria-controls='" + ariaControlSlide + "']");
+
+		if(!activeSlickDot) return;
+
+		this._setPositionActiveTab(tabList, activeTab);
+
+		if(activeSlickDot.clientHeight) {
+			activeSlickDot.click();			
+		}
+	},
+	slickParams_1: {
+	    dots: true,
+	    infinite: false,
+	    speed: 500,
+	    slidesToShow: 1,
+	    slidesToScroll: 1,
+	    slide: 'div',
+	    arrows: false,
+	    autoplay: false,
+	    mobileFirst: true,
+	    variableWidth: false,
+	    adaptiveHeight: true,
+	    rtl: document.documentElement.getAttribute("lang") == "ar" ? true : false,
+	    responsive: [
+	    	{
+	            breakpoint: 992,
+	            settings: "unslick"
+	        },
+	        {
+	            breakpoint: 300,
+	            settings: {
+	                slidesToShow: 1,
+	                slidesToScroll: 1
+	            }
+	        }
+	    ]
+	},	
+};

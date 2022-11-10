@@ -287,15 +287,6 @@ ul {
 .tab-btn.active {
   pointer-events: none;
 }
-.tab-content-text {
-  background: rgba(255, 255, 255, 0.5);
-  box-shadow: 0px 8px 40px rgba(0, 0, 0, 0.1);
-  border-radius: 36px;
-  padding: 0;
-}
-.tab-content-inner {
-  padding: 40px 20px;
-}
 .tab-content p, .tab-content ul {
   margin: 15px 0 0;
 }
@@ -1583,37 +1574,43 @@ ul {
   .sectionOnMain-cardsRow {
     margin-right: -20px;
   }
-  .tab-content-slick .tab-content-imgAllWScaled {
+  .tabsSlider .tab-nav-wrap {
+    position: relative;
+  }
+  .tabsSlider .tab-content-imgAllWScaled {
     width: auto;
     transform: scale(1);
     display: block;
     max-width: 100%;
   }
-  .tab-content-slick .slick-list {
+  .tabsSlider .tab-content-imgCol {
+    margin-top: 15px;
+  }
+  .tabsSlider .slick-list {
     max-width: calc(100vw - 40px);
   }
-  .tab-content-slick .slick-slide {
+  .tabsSlider .slick-slide {
     opacity: 1 !important;
   }
-  .tab-content-slick .slick-dots {
+  .tabsSlider .slick-dots {
     list-style: none;
     text-align: center;
   }
-  .tab-content-slick .slick-dots li:focus-visible,
-.tab-content-slick .slick-dots button:focus-visible {
+  .tabsSlider .slick-dots li:focus-visible,
+.tabsSlider .slick-dots button:focus-visible {
     outline: none;
   }
-  .tab-content-slick .slick-dots li {
+  .tabsSlider .slick-dots li {
     height: 40px;
     width: 40px;
     display: inline-flex;
     align-items: center;
     margin: 2px;
   }
-  .tab-content-slick .slick-dots li.slick-active button {
+  .tabsSlider .slick-dots li.slick-active button {
     background-color: #FF0090;
   }
-  .tab-content-slick .slick-dots button {
+  .tabsSlider .slick-dots button {
     appearance: none;
     font-size: 0;
     color: transparent;
@@ -1623,15 +1620,21 @@ ul {
     height: 4px;
     width: 100%;
   }
-  .tab-content-slick:not(.tab-content-slick-showDots) .slick-dots {
+  .tabsSlider:not(.tabsSlider-showDots) .slick-dots {
     display: none !important;
   }
-  .tab-content-slick + .lnkStart-wrapper {
+  .tabsSlider .tab-content + .lnkStart-wrapper {
     margin-top: 40px;
     text-align: center;
   }
-  .tab-content-slick .tab-content-imgCol {
-    margin-top: 15px;
+  .tabsSlider-text .tab-content {
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0px 8px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 36px;
+    padding: 0;
+  }
+  .tabsSlider-text .tab-content .tab-pane {
+    padding: 40px 20px;
   }
 }
 /* select2 customize */

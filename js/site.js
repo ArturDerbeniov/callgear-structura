@@ -498,7 +498,7 @@ var initSlick = {
 		}
 	},
 	startGallery: function() {
-		this._setBackup();
+		initSlick._setBackup();
 		$(".tab-content-slick").on("afterChange", function(event, slick, numSlide) {
 			_setActiveTab(slick.$slides, numSlide);
 		});
@@ -527,9 +527,7 @@ var initSlick = {
 
 		this._setPositionActiveTab(tabList, activeTab);
 
-		if(activeSlickDot.clientHeight) {
-			activeSlickDot.click();			
-		}
+		activeSlickDot.click();			
 	},
 	slickParams_1: {
 	    dots: true,

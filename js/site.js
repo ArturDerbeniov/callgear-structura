@@ -501,7 +501,7 @@ var initSlick = {
 		initSlick._setBackup();
 
 		$(".tabsSlider .tab-content").on("afterChange", function(event, slick, numSlide) {
-			_setActiveTab(slick.$slides, numSlide);
+			// _setActiveTab(slick.$slides, numSlide);
 		});
 		$(".tabsSlider .tab-content").slick(initSlick.slickParams_1);
 

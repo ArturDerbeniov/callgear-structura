@@ -543,7 +543,7 @@ var initSlick = {
 			}
 		});
 		if(_$slider.classList.contains("slick-slider")) {
-			$(_$slider).slick("slickGoTo", activeTabNum);
+			// $(_$slider).slick("slickGoTo", activeTabNum);
 		}
 	},
 	slickParams_1: {

@@ -426,6 +426,7 @@ var loadJS = function(url, callback, locToInsert){
 
     locToInsert.appendChild(scriptTag);
 };
+
 var initSlickFirstLoadFlag = true;
 var initSlickFirstResizeFlag = true;
 var initSlick = {
@@ -451,7 +452,6 @@ var initSlick = {
 		}
 	},
 	_setBackup: function() {
-		console.log("_setBackup")
 		let slicks = document.querySelectorAll(".tabsSlider .tab-content");
 		slicks.forEach((slick) => {
 			let tabPanes = slick.querySelectorAll(".tab-pane");
@@ -488,8 +488,6 @@ var initSlick = {
 		}
 	},
 	startGallery: function() {
-		console.log("this: ", this);
-		console.log("_action: ", initSlick._action);
 		if(
 			(initSlick._action == "onResize" && initSlickFirstResizeFlag)
 			||
@@ -518,17 +516,12 @@ var initSlick = {
 		}
 
 		$(".tabsSlider .tab-content").on("afterChange", function(event, slick, numSlide) {
-			console.log(event);
-			console.log(slick);
 			_setActiveTab(slick.$slides[numSlide], numSlide);
 		});
 		$(".tabsSlider .tab-content").slick(initSlick.slickParams_1);
 
 		function _setActiveTab( activeSlide, numSlideActive) {
-				console.log(activeSlide);
-				console.log(numSlideActive);
 				if(activeSlide) {
-					console.log("activeSlide.dataset.id = ", activeSlide.dataset.id);
 					let tabList = document.querySelector("[data-bs-target='#" + activeSlide.dataset.id + "']").parentNode;
 
 					let oldActiveTab = tabList.querySelector(".active");
@@ -540,22 +533,6 @@ var initSlick = {
 					newActiveTab.setAttribute("aria-selected", "true");
 					window.initSlick._setPositionActiveTab(tabList, tabList.getElementsByClassName("btn")[numSlideActive]);
 				}
-			/*for(let i = sliders.length-1; i >= 0; i--) {
-				(function(sliders, i) {
-					if(sliders[i].classList.contains("slick-active")) {
-						let tabList = document.querySelector("[data-bs-target='#" + sliders[i].dataset.id + "']").parentNode;
-
-						let oldActiveTab = tabList.querySelector(".active");
-						oldActiveTab.classList.remove("active");
-						oldActiveTab.setAttribute("aria-selected", "false");
-
-						let newActiveTab = tabList.getElementsByClassName("btn")[numSlideActive];
-						newActiveTab.classList.add("active");
-						newActiveTab.setAttribute("aria-selected", "true");
-						window.initSlick._setPositionActiveTab(tabList, tabList.getElementsByClassName("btn")[numSlideActive]);
-					}
-				})(sliders, i)
-			}*/
 		}
 	},	
 	setActiveSlideFromTab: function(tabList, activeTab) {
@@ -584,7 +561,7 @@ var initSlick = {
 	slickParams_1: {
 	    dots: true,
 	    infinite: false,
-	    speed: 500,
+	    speed: 300,
 	    slidesToShow: 1,
 	    slidesToScroll: 1,
 	    slide: 'div',

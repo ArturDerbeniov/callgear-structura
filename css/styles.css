@@ -96,7 +96,7 @@ html[lang=ar] .timeline-features-image3 {
     margin-right: -640px;
   }
 }
-@media (max-width: 992px) {
+@media (max-width: 991px) {
   html[lang=ar] .callback-widget-work-item:not(:last-child):after {
     left: inherit;
     right: 20px;
@@ -116,6 +116,11 @@ html[lang=ar] .timeline-features-image3 {
   }
   .ae.setting-up-scenarios picture {
     margin-right: -225px;
+  }
+}
+@media (min-width: 992px) {
+  html[lang=ar] .tab-content-imgAllWScaled {
+    margin-right: 350px;
   }
 }
 ul {

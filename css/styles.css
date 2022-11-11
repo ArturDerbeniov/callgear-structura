@@ -97,6 +97,9 @@ html[lang=ar] .timeline-features-image3 {
   }
 }
 @media (max-width: 991px) {
+  .tab-btn:not(.active):hover {
+    background: transparent;
+  }
   html[lang=ar] .callback-widget-work-item:not(:last-child):after {
     left: inherit;
     right: 20px;
@@ -291,6 +294,12 @@ ul {
 }
 .tab-btn.active {
   pointer-events: none;
+}
+.tab-content {
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 8px 40px rgba(0, 0, 0, 0.1);
+  border-radius: 36px;
+  padding: 0;
 }
 .tab-content p, .tab-content ul {
   margin: 15px 0 0;
@@ -1640,6 +1649,9 @@ ul {
   }
   .tabsSlider-text .tab-content .tab-pane {
     padding: 40px 20px;
+  }
+  html[lang=ar] .tabsSlider .tab-content .slick-track {
+    display: flex;
   }
 }
 /* select2 customize */

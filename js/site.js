@@ -426,6 +426,7 @@ var loadJS = function(url, callback, locToInsert){
 
     locToInsert.appendChild(scriptTag);
 };
+var initSlickFirstLoadFlag = true;
 var initSlick = {
 	check: function() {
 
@@ -447,6 +448,7 @@ var initSlick = {
 		}
 	},
 	_setBackup: function() {
+		console.log("_setBackup")
 		let slicks = document.querySelectorAll(".tabsSlider .tab-content");
 		let tabNavs = document.querySelectorAll(".tab-nav");
 		slicks.forEach((slick) => {
@@ -498,7 +500,10 @@ var initSlick = {
 		}
 	},
 	startGallery: function() {
-		initSlick._setBackup();
+		if(initSlickFirstLoadFlag) {
+			initSlick._setBackup();
+			initSlickFirstLoadFlag = false;			
+		}
 
 		$(".tabsSlider .tab-content").on("afterChange", function(event, slick, numSlide) {
 			console.log(event);

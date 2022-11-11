@@ -501,11 +501,15 @@ var initSlick = {
 		initSlick._setBackup();
 
 		$(".tabsSlider .tab-content").on("afterChange", function(event, slick, numSlide) {
+			console.log(event);
+			console.log(slick);
 			_setActiveTab(slick.$slides[numSlide], numSlide);
 		});
 		$(".tabsSlider .tab-content").slick(initSlick.slickParams_1);
 
 		function _setActiveTab( activeSlide, numSlideActive) {
+				console.log(activeSlide);
+				console.log(numSlideActive);
 				if(activeSlide) {
 						let tabList = document.querySelector("[data-bs-target='#" + activeSlide.dataset.id + "']").parentNode;
 

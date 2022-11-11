@@ -507,19 +507,20 @@ var initSlick = {
 
 		function _setActiveTab(sliders, numSlideActive) {
 			for(let i = sliders.length-1; i >= 0; i--) {
-				if(sliders[i].classList.contains("slick-active")) {
-					let tabList = document.querySelector("[data-bs-target='#" + sliders[i].dataset.id + "']").parentNode;
+				(function(sliders, i) {
+					if(sliders[i].classList.contains("slick-active")) {
+						let tabList = document.querySelector("[data-bs-target='#" + sliders[i].dataset.id + "']").parentNode;
 
-					let oldActiveTab = tabList.querySelector(".active");
-					oldActiveTab.classList.remove("active");
-					oldActiveTab.setAttribute("aria-selected", "false");
+						let oldActiveTab = tabList.querySelector(".active");
+						oldActiveTab.classList.remove("active");
+						oldActiveTab.setAttribute("aria-selected", "false");
 
-					let newActiveTab = tabList.getElementsByClassName("btn")[numSlideActive];
-					newActiveTab.classList.add("active");
-					newActiveTab.setAttribute("aria-selected", "true");
-					window.initSlick._setPositionActiveTab(tabList, tabList.getElementsByClassName("btn")[numSlideActive]);
-					break;
-				}
+						let newActiveTab = tabList.getElementsByClassName("btn")[numSlideActive];
+						newActiveTab.classList.add("active");
+						newActiveTab.setAttribute("aria-selected", "true");
+						window.initSlick._setPositionActiveTab(tabList, tabList.getElementsByClassName("btn")[numSlideActive]);
+					}
+				})(sliders, i)
 			}
 		}
 	},	

@@ -499,6 +499,7 @@ var initSlick = {
 	},
 	startGallery: function() {
 		initSlick._setBackup();
+
 		$(".tabsSlider .tab-content").on("afterChange", function(event, slick, numSlide) {
 			_setActiveTab(slick.$slides, numSlide);
 		});
@@ -508,7 +509,14 @@ var initSlick = {
 			for(let i = sliders.length-1; i >= 0; i--) {
 				if(sliders[i].classList.contains("slick-active")) {
 					let tabList = document.querySelector("[data-bs-target='#" + sliders[i].dataset.id + "']").parentNode;
-					tabList.getElementsByClassName("btn")[numSlideActive].click();
+
+					let oldActiveTab = tabList.querySelector(".active");
+					oldActiveTab.classList.remove("active");
+					oldActiveTab.setAttribute("aria-selected", "false");
+
+					let newActiveTab = tabList.getElementsByClassName("btn")[numSlideActive];
+					newActiveTab.classList.add("active");
+					newActiveTab.setAttribute("aria-selected", "true");
 					window.initSlick._setPositionActiveTab(tabList, tabList.getElementsByClassName("btn")[numSlideActive]);
 					break;
 				}
@@ -518,7 +526,7 @@ var initSlick = {
 	setActiveSlideFromTab: function(tabList, activeTab) {
 		let idSlideToFind = activeTab.dataset.bsTarget.slice(1);
 
-		if(! document.querySelector("[data-id='" + idSlideToFind + "']")) return;
+		if(!document.querySelector("[data-id='" + idSlideToFind + "']")) return;
 
 		let ariaControlSlide = document.querySelector("[data-id='" + idSlideToFind + "']").id;
 		let activeSlickDot = document.querySelector("[aria-controls='" + ariaControlSlide + "']");
@@ -527,7 +535,16 @@ var initSlick = {
 
 		this._setPositionActiveTab(tabList, activeTab);
 
-		activeSlickDot.click();			
+		let _$slider = activeSlickDot.parentNode.parentNode.parentNode;
+		let activeTabNum;
+		tabList.querySelectorAll(".tab-btn").forEach((tab, i) => {
+			if(tab.classList.contains("active")) {
+				activeTabNum = i;
+			}
+		});
+		if(_$slider.classList.contains("slick-slider")) {
+			$(_$slider).slick("slickGoTo", activeTabNum);
+		}
 	},
 	slickParams_1: {
 	    dots: true,

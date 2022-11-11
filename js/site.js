@@ -220,7 +220,7 @@ var fnDelay = function () {
     };
 }();
 function eventWindowResize() {
-	initSlick.check();
+	initSlick.check("onResize");
 	if(window.innerWidth >= 992) {
 		let tabsPane = document.querySelectorAll(".tab-pane[data-id]");
 		if(tabsPane.length) {
@@ -232,7 +232,7 @@ function eventWindowResize() {
 	}
 }
 function eventWindowLoad() {
-	initSlick.check();
+	initSlick.check("onLoad");
 }
 function eventDocClick(e) {
     var targ = e.target;
@@ -427,8 +427,10 @@ var loadJS = function(url, callback, locToInsert){
     locToInsert.appendChild(scriptTag);
 };
 var initSlickFirstLoadFlag = true;
+var initSlickFirstResizeFlag = true;
 var initSlick = {
-	check: function() {
+	_action: undefined,
+	check: function(action) {
 
 		if(window.innerWidth <= 991) {
 
@@ -438,6 +440,7 @@ var initSlick = {
 					isTabsGallery
 				) 
 			{
+				this._action = action;
 				if (typeof $.fn.slick == "undefined") {
 		        	loadJS("js/slick1.8.1.min.js", initSlick.startGallery, document.body);
 		        }
@@ -450,27 +453,12 @@ var initSlick = {
 	_setBackup: function() {
 		console.log("_setBackup")
 		let slicks = document.querySelectorAll(".tabsSlider .tab-content");
-		let tabNavs = document.querySelectorAll(".tab-nav");
 		slicks.forEach((slick) => {
 			let tabPanes = slick.querySelectorAll(".tab-pane");
 			tabPanes.forEach((pane) => {
 				pane.setAttribute("data-id", pane.id);
 			});
-		});
-
-		tabNavs.forEach((nav) => {
-			let tabs = nav.querySelectorAll(".tab-btn");
-			tabs.forEach((tab, i) => {
-				if(!i) {
-					tab.classList.add("active");
-					tab.setAttribute("aria-selected", "true");
-				}
-				else {
-					tab.classList.remove("active");
-					tab.setAttribute("aria-selected", "false");
-				}
-			})
-		});
+		});		
 	},
 	_setPositionActiveTab: function(tabList, activeTab) {
 		// обрез слева
@@ -500,9 +488,33 @@ var initSlick = {
 		}
 	},
 	startGallery: function() {
-		if(initSlickFirstLoadFlag) {
+		console.log("this: ", this);
+		console.log("_action: ", initSlick._action);
+		if(
+			(initSlick._action == "onResize" && initSlickFirstResizeFlag)
+			||
+			(initSlick._action == "onLoad" &&  initSlickFirstLoadFlag)
+		) {
 			initSlick._setBackup();
-			initSlickFirstLoadFlag = false;			
+			initSlickFirstResizeFlag = false;
+			initSlickFirstLoadFlag = false;	
+		}
+		
+		if(initSlick._action == "onResize") {
+			let tabNavs = document.querySelectorAll(".tab-nav");
+			tabNavs.forEach((nav) => {
+				let tabs = nav.querySelectorAll(".tab-btn");
+				tabs.forEach((tab, i) => {
+					if(!i) {
+						tab.classList.add("active");
+						tab.setAttribute("aria-selected", "true");
+					}
+					else {
+						tab.classList.remove("active");
+						tab.setAttribute("aria-selected", "false");
+					}
+				})
+			});
 		}
 
 		$(".tabsSlider .tab-content").on("afterChange", function(event, slick, numSlide) {
@@ -516,18 +528,18 @@ var initSlick = {
 				console.log(activeSlide);
 				console.log(numSlideActive);
 				if(activeSlide) {
-						console.log("activeSlide.dataset.id = ", activeSlide.dataset.id);
-						let tabList = document.querySelector("[data-bs-target='#" + activeSlide.dataset.id + "']").parentNode;
+					console.log("activeSlide.dataset.id = ", activeSlide.dataset.id);
+					let tabList = document.querySelector("[data-bs-target='#" + activeSlide.dataset.id + "']").parentNode;
 
-						let oldActiveTab = tabList.querySelector(".active");
-						oldActiveTab.classList.remove("active");
-						oldActiveTab.setAttribute("aria-selected", "false");
+					let oldActiveTab = tabList.querySelector(".active");
+					oldActiveTab.classList.remove("active");
+					oldActiveTab.setAttribute("aria-selected", "false");
 
-						let newActiveTab = tabList.getElementsByClassName("btn")[numSlideActive];
-						newActiveTab.classList.add("active");
-						newActiveTab.setAttribute("aria-selected", "true");
-						window.initSlick._setPositionActiveTab(tabList, tabList.getElementsByClassName("btn")[numSlideActive]);
-					}
+					let newActiveTab = tabList.getElementsByClassName("btn")[numSlideActive];
+					newActiveTab.classList.add("active");
+					newActiveTab.setAttribute("aria-selected", "true");
+					window.initSlick._setPositionActiveTab(tabList, tabList.getElementsByClassName("btn")[numSlideActive]);
+				}
 			/*for(let i = sliders.length-1; i >= 0; i--) {
 				(function(sliders, i) {
 					if(sliders[i].classList.contains("slick-active")) {
@@ -566,7 +578,7 @@ var initSlick = {
 			}
 		});
 		if(_$slider.classList.contains("slick-slider")) {
-			// $(_$slider).slick("slickGoTo", activeTabNum);
+			$(_$slider).slick("slickGoTo", activeTabNum);
 		}
 	},
 	slickParams_1: {

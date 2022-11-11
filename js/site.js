@@ -511,6 +511,7 @@ var initSlick = {
 				console.log(activeSlide);
 				console.log(numSlideActive);
 				if(activeSlide) {
+						console.log("activeSlide.dataset.id = ", activeSlide.dataset.id);
 						let tabList = document.querySelector("[data-bs-target='#" + activeSlide.dataset.id + "']").parentNode;
 
 						let oldActiveTab = tabList.querySelector(".active");

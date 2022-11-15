@@ -1052,6 +1052,7 @@ ul {
   border-radius: 36px;
   padding: 24px 36px;
   max-width: 380px;
+  min-height: 100px;
   line-height: 1.5;
   margin-left: auto;
   margin-right: auto;
